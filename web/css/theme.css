@@ -168,6 +168,7 @@ footer p{
 h1{
 	font-weight: bold;
 	text-align: center;
+        float: center;
 	background: inherit;
 	font: bolder 24px 'Trebuchet MS', sans-serif;
 /*	color: rgb(185, 163, 219);*/
@@ -240,7 +241,7 @@ header{
 	margin-top: 5%;
 }
 #pulsante input{
-	float: center;
+	float: inside;
 	margin-top: 5%;
 	height: 100px;
 	width: 300px;
@@ -316,9 +317,12 @@ nav li a#current  {
 	background-color:grey;
 }
 
-ul.c {
-    float: left;
-    text-align: center;
+ul.d {
+        float: left;
+        text-align: left;
+        color: white;
+        font: bolder 24px 'Trebuchet MS', sans-serif;
+    
 }
 
 #numeri{
