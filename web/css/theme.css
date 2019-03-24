@@ -169,9 +169,10 @@ h1{
 	font-weight: bold;
 	text-align: center;
 	background: inherit;
-	font-family: "Courier New", monospace;
-	color: rgb(111,0,255);
-	font-size: 65pt;
+	font: bolder 24px 'Trebuchet MS', sans-serif;
+/*	color: rgb(185, 163, 219);*/
+        color: rgba(255, 255, 255, 0.8);
+	font-size: 40pt;
 	text-shadow: 3px 3px rgba(0,0,0,0.4);
 	margin-right: 10%;
 }
@@ -313,6 +314,11 @@ nav li a:hover {
 nav li a#current  {
 	color: #FFF;
 	background-color:grey;
+}
+
+ul.c {
+    float: left;
+    text-align: center;
 }
 
 #numeri{
