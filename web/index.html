@@ -26,8 +26,8 @@ and open the template in the editor.
 				<nav>
 					<ul>
 						<li ><a href="index.html" id="current" >Home</a></li>
-						<li><a href="./php/members.php" >I miei voli</a></li>
-						  <li><a href="./html/instructions.html" >Regolamento</a></li>	
+						<li><a href="./html/voli.html" >I miei voli</a></li>
+						<li><a href="./html/instructions.html" >Regolamento</a></li>	
 					</ul>
 				</nav>
 			</header>
@@ -37,7 +37,7 @@ and open the template in the editor.
 			 <section id="main">
 			   <form action="login.php" method="post" >
 				   	<div id="da"><label>Partenza da: </label><input type="text" name="username" required></div>
-				   	<div id="a"><label>Arrivo a: </label><input type="password" name="password" required></div>
+				   	<div id="a"><label>Arrivo a: </label><input type="text" name="text" required></div>
 					<div id="tipoVolo">
 							<input type="radio" id="radio_A" name="type" value="A" onchange="Init()"> Solo Andata
 						<input type="radio" id="radio_AR" name="type" value="AR" onchange="OnRadioStateChange()"> Andata-Ritorno
