@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<!DOCTYPE html>
 <html lang="it">
 	<head>		
 		<meta charset="utf-8"> 
@@ -19,6 +20,10 @@ and open the template in the editor.
 			function OnRadioStateChange () {
 				document.getElementById("ritorno").disabled=false;				
 			}
+                        function cerca(){
+                            document.getElementById("bottone").value="cerco..."
+                            UserDBOA;
+                        }
 		</script>
   	</head>
   	<body onload="Init()"> 
@@ -35,9 +40,9 @@ and open the template in the editor.
 				<img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
 			 </nav>
 			 <section id="main">
-			   <form action="login.php" method="post" >
-				   	<div id="da"><label>Partenza da: </label><input type="text" name="username" required></div>
-				   	<div id="a"><label>Arrivo a: </label><input type="password" name="password" required></div>
+                             <form action="">
+				   	<div id="da"><label>Partenza da: </label><input type="text" name="andata" required></div>
+				   	<div id="a"><label>Arrivo a: </label><input type="text" name="arrivo" required></div>
 					<div id="tipoVolo">
 							<input type="radio" id="radio_A" name="type" value="A" onchange="Init()"> Solo Andata
 						<input type="radio" id="radio_AR" name="type" value="AR" onchange="OnRadioStateChange()"> Andata-Ritorno
@@ -52,7 +57,7 @@ and open the template in the editor.
 								<input type="date" id="ritorno" name="ritorno">
 							</label>
 						</div>
-				   	<div id="pulsante"> <input type="submit" value="Trova"></div> 
+                                        <div id="pulsante"> <input type="submit" id="bottone" value="Trova" onclick="cerca()"></div> 
 				   	<!--manca php-->
 			   </form><br>
 		   </section>
