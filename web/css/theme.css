@@ -215,25 +215,25 @@ header{
 	text-align: left;
 	margin-top: 10%;
 	margin-left: 10%;
-	font: bolder 24px 'Trebuchet MS', sans-serif;
+	font: bolder 16px 'Trebuchet MS', sans-serif;
 }
 #dataA{
 	text-align: left;
 	margin-top: 5%;
 	margin-left: 7%;
-	font: bolder 24px 'Trebuchet MS', sans-serif;
+	font: bolder 14px 'Trebuchet MS', sans-serif;
 }
 #dataR{
 	text-align: right;
 	margin-top: -2.5%;
 	margin-right: 7%;
-	font: bolder 24px 'Trebuchet MS', sans-serif;
+	font: bolder 14px 'Trebuchet MS', sans-serif;
 }
 #a{
 	text-align: right;
 	margin-top: -2.5%;
 	margin-right: 12%;
-	font: bolder 24px 'Trebuchet MS', sans-serif;
+	font: bolder 16px 'Trebuchet MS', sans-serif;
 }
 #tipoVolo{
 	margin-top: 5%;
@@ -399,16 +399,3 @@ tbody{
 	margin-left: 20%;
 	background: #FFF repeat-y;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
