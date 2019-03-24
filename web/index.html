@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="it">
+	<head>		
+		<meta charset="utf-8"> 
+    	<meta name = "author" content = "Sudoku Mania">
+    	<meta name = "keywords" content = "sudoku, mania, giochi, online">
+   		<link rel="shortcut icon" type="image/x-icon" href="./immagini/logoFinale.png">
+   		<link rel="stylesheet" type="text/css" href="./css/theme.css" media="screen">
+		<title>PIANTA POSTI</title>
+		<script>
+			function Init(){
+				document.getElementById("ritorno").disabled=true;
+			}
+			function OnRadioStateChange () {
+				document.getElementById("ritorno").disabled=false;				
+			}
+		</script>
+  	</head>
+  	<body onload="Init()"> 
+	  		<header>
+				<nav>
+					<ul>
+						<li ><a href="index.html" id="current" >Home</a></li>
+						<li><a href="./php/members.php" >I miei voli</a></li>
+						  <li><a href="./html/istructions.html" >Regolamento</a></li>	
+					</ul>
+				</nav>
+			</header>
+			<nav id="aereo">
+				<img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
+			 </nav>
+			 <section id="main">
+			   <form action="login.php" method="post" >
+				   	<div id="da"><label>Partenza da: </label><input type="text" name="username" required></div>
+				   	<div id="a"><label>Arrivo a: </label><input type="password" name="password" required></div>
+					<div id="tipoVolo">
+							<input type="radio" id="radio_A" name="type" value="A" onchange="Init()"> Solo Andata
+						<input type="radio" id="radio_AR" name="type" value="AR" onchange="OnRadioStateChange()"> Andata-Ritorno
+					</div>
+					<div id="dataA">
+						<label>Scegli la data di Andata: 
+							<input type="date" id="andata" name="andata" required>
+						</label>
+					</div>
+					<div id="dataR">
+							<label>Scegli la data di Ritorno: 
+								<input type="date" id="ritorno" name="ritorno">
+							</label>
+						</div>
+				   	<div id="pulsante"> <input type="submit" value="Trova"></div> 
+				   	<!--manca php-->
+			   </form><br>
+		   </section>
+	</body>
+</html>
