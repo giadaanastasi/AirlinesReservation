@@ -41,7 +41,7 @@ a:active{
 }
 
 body {
-	margin: 20px 0;
+
 	padding: 0;
 	font: normal 0.72em/1.5em 'Trebuchet MS', sans-serif;
 	color:#444;
@@ -168,12 +168,10 @@ footer p{
 h1{
 	font-weight: bold;
 	text-align: center;
-        float: center;
 	background: inherit;
-	font: bolder 24px 'Trebuchet MS', sans-serif;
-/*	color: rgb(185, 163, 219);*/
-        color: rgba(255, 255, 255, 0.8);
-	font-size: 40pt;
+	font-family: "Courier New", monospace;
+	color: rgb(111,0,255);
+	font-size: 65pt;
 	text-shadow: 3px 3px rgba(0,0,0,0.4);
 	margin-right: 10%;
 }
@@ -189,6 +187,17 @@ header{
 	float: left;
 	margin-top: 0;
 	margin-bottom: 60%;
+}
+
+#libero{
+    background-color: green;
+    height: 40px;
+    width: 40px;
+}
+#occupato{
+    background-color: red;
+    height: 40px;
+    width: 40px;
 }
 
 #logo{
@@ -227,7 +236,7 @@ header{
 }
 #dataR{
 	text-align: right;
-	margin-top: -2.5%;
+	margin-top: 2%;
 	margin-right: 7%;
 	font: bolder 24px 'Trebuchet MS', sans-serif;
 }
@@ -241,7 +250,7 @@ header{
 	margin-top: 5%;
 }
 #pulsante input{
-	float: inside;
+	float: center;
 	margin-top: 5%;
 	height: 100px;
 	width: 300px;
@@ -317,14 +326,6 @@ nav li a#current  {
 	background-color:grey;
 }
 
-ul.d {
-        float: left;
-        text-align: left;
-        color: white;
-        font: bolder 24px 'Trebuchet MS', sans-serif;
-    
-}
-
 #numeri{
 	
 	margin-left: 30%;
@@ -341,6 +342,13 @@ ul.d {
 	color: rgb(111,0,255);
 	font-family: "Courier New", monospace;
 	font-size: 40px;
+}
+
+
+
+#container{
+    width:100%;
+    
 }
 
 #regole{
@@ -365,6 +373,14 @@ ul.d {
 	border-radius: 10px;
 	margin-left: 10%;
 }
+#selezione{
+    	text-align: center;
+	margin-top: 10%;
+	margin-left: 7%;
+	font: bolder 24px 'Trebuchet MS', sans-serif;
+    
+}
+
 
 .sidebox{
 	float:right;
@@ -388,14 +404,6 @@ ul.d {
 	padding-bottom: 0;
 }
 
-table{
-	margin-left: 26%;
-	width: 47%;
-	height: 50%;
-	font-family: "Courier New", monospace;
-	font-size: 25px;
-	border: solid blue;
-}
 
 tbody{
 	border: solid blue;

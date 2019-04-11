@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html lang="it">
 	<head>		
 		<meta charset="utf-8"> 
@@ -11,7 +7,7 @@ and open the template in the editor.
     	<meta name = "keywords" content = "sudoku, mania, giochi, online">
    		<link rel="shortcut icon" type="image/x-icon" href="./immagini/logoFinale.png">
    		<link rel="stylesheet" type="text/css" href="./css/theme.css" media="screen">
-		<title>HOME</title>
+		<title>PIANTA POSTI</title>
 		<script>
 			function Init(){
 				document.getElementById("ritorno").disabled=true;
@@ -26,8 +22,8 @@ and open the template in the editor.
 				<nav>
 					<ul>
 						<li ><a href="index.html" id="current" >Home</a></li>
-						<li><a href="./html/voli.html" >I miei voli</a></li>
-						<li><a href="./html/instructions.html" >Regolamento</a></li>	
+						<li><a href="./php/members.php" >I miei voli</a></li>
+						  <li><a href="./html/istructions.html" >Regolamento</a></li>	
 					</ul>
 				</nav>
 			</header>
@@ -35,23 +31,36 @@ and open the template in the editor.
 				<img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
 			 </nav>
 			 <section id="main">
-			   <form action="login.php" method="post" >
-				   	<div id="da"><label>Partenza da: </label><input type="text" name="username" required></div>
-				   	<div id="a"><label>Arrivo a: </label><input type="text" name="text" required></div>
+			   <form  method="post" action="/PrenotazioniWeb/myServlet">
+				   	<div id="da"><label>Partenza da: </label><input type="text" name="Partenza" required></div>
+				   	<div id="a"><label>Arrivo a: </label><input type="text" name="Arrivo" required></div>
 					<div id="tipoVolo">
 							<input type="radio" id="radio_A" name="type" value="A" onchange="Init()"> Solo Andata
 						<input type="radio" id="radio_AR" name="type" value="AR" onchange="OnRadioStateChange()"> Andata-Ritorno
 					</div>
 					<div id="dataA">
 						<label>Scegli la data di Andata: 
-							<input type="date" id="andata" name="andata" required>
+							<input type="date" id="andata" name="dataandata" required>
 						</label>
 					</div>
 					<div id="dataR">
 							<label>Scegli la data di Ritorno: 
-								<input type="date" id="ritorno" name="ritorno">
+								<input type="date" id="ritorno" name="dataritorno">
 							</label>
+                                            
 						</div>
+                                        <div id="selezione">
+                                           <select>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                           </select> 
+                                            
+                                        </div>
+                                        
+                                        
 				   	<div id="pulsante"> <input type="submit" value="Trova"></div> 
 				   	<!--manca php-->
 			   </form><br>
