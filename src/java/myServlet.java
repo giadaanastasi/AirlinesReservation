@@ -102,10 +102,10 @@ public class myServlet extends HttpServlet {
         String data=request.getParameter("data");
         //response.getWriter().println("Partenza: "+partenza +", arrivo: "+arrivo);
        // aggiunto una lista per il ritorno invertendo i campi di arr ritorno.
-        String nposti=request.getParameter("nposti");
-        request.setAttribute("nposti",nposti);
-        List<Flight> flightList2 = fa.getTratte(partenza,arrivo,data);
-        request.setAttribute("flightList2",flightList2);
+        
+            List<Flight> flightList2 = fa.getTratte(partenza,arrivo,data);
+            request.setAttribute("flightList2",flightList2);
+
         
 
         
@@ -140,14 +140,14 @@ public class myServlet extends HttpServlet {
         String arrivo=request.getParameter("Arrivo");
         String data=request.getParameter("dataandata");
         String data2=request.getParameter("dataritorno");
-        String nposti=request.getParameter("nposti");
+
         //response.getWriter().println("Partenza: "+partenza +", arrivo: "+arrivo);
        // aggiunto una lista per il ritorno invertendo i campi di arr ritorno.
         List<Flight> flightList = fa.getTratte(partenza, arrivo,data);
         request.setAttribute("flightList", flightList);
         request.setAttribute("ar", ar);       
         request.setAttribute("data2", data2);
-        request.setAttribute("nposti",nposti);
+
         //response.getWriter().println(flightList.size());
         request.setAttribute("peso", flightList.size());
         if(flightList.isEmpty()){

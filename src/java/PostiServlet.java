@@ -84,10 +84,10 @@ public class PostiServlet extends HttpServlet {
         String ar = request.getParameter("ar");
         String partenza=request.getParameter("arrivo");
         String arrivo=request.getParameter("partenza");
-        String posti=request.getParameter("posti");
+
         String data=request.getParameter("data");
-        String postiSel=request.getParameter("nposti");
-        // c'è da prestare attenzione ai nomi semmai cambiarli e rimetterli un pò più significativi
+        // questi ci sta che non servano neppure ora vediamo
+
         
         for(int j=0; j<15; j++){
             out.println("<td>"+j+"</td>");
@@ -101,7 +101,9 @@ public class PostiServlet extends HttpServlet {
                     //out.println("<tr>");
                     List<MatricePosti> res = mpf.cercaOccupati(val, i, j);
                     if(res.isEmpty()){
-                        out.println("<td><a href=\"./PrenotaServlet?idvolo="+val+"&ar="+ar+"&partenza="+partenza+"&arrivo="+arrivo+"&data="+data+"&riga="+i+"&colonna="+j+"&posti="+posti+"&nposti="+postiSel+"\"><button name=\"idvolo\" id=\"libero\" value=\"${flightList.idvolo}\" >L</button></a></td>");
+
+                        out.println("<td><a href=\"./PrenotaServlet?idvolo="+val+"&ar="+ar+"&partenza="+partenza+"&arrivo="+arrivo+"&data="+data+"&riga="+i+"&colonna="+j+"\"><button name=\"idvolo\" id=\"libero\" value=\"${flightList.idvolo}\" >L</button></a></td>");
+
                     } else{
                         out.println("<td><button id=\"occupato\"  disabled>O</button></td>");
                     }  

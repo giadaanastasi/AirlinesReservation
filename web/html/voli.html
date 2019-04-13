@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="it">
+	<head>		
+		<meta charset="utf-8"> 
+    	<meta name = "author" content = "Sudoku Mania">
+    	<meta name = "keywords" content = "sudoku, mania, giochi, online">
+   		<link rel="shortcut icon" type="image/x-icon" href="./immagini/logoFinale.png">
+   		<link rel="stylesheet" type="text/css" href="../css/theme.css" media="screen">
+		<title>FLIGHTS</title>
+		<script>
+			function Init(){
+				document.getElementById("ritorno").disabled=true;
+			}
+			function OnRadioStateChange () {
+				document.getElementById("ritorno").disabled=false;				
+			}
+		</script>
+  	</head>
+  	<body onload="Init()"> 
+	  		<header>
+				<nav>
+					<ul>
+						<li ><a href="../index.html" >Home</a></li>
+						<li><a href="./voli.html" id="current" >I miei voli</a></li>
+						  <li><a href="./instructions.html" >Regolamento</a></li>	
+					</ul>
+				</nav>
+			</header>
+			<nav id="aereo">
+				<img class="img_content_section" src="../immagini/CieloROSA.jpg" alt="pianta" >
+			 </nav>
+			 <section id="main">
+			   <form action="login.php" method="post" >
+                               <h1>I MIEI VOLI</h1>
+                               <!-- Inserire funzione che prende voli da database-->
+                               <?xml version="1.0"?>
+   
+
+                               
+                               
+			   </form><br>
+		   </section>
+	</body>
+</html>

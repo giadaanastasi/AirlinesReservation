@@ -5,7 +5,6 @@
  */
 
 import Session.PrenotazioniFacade;
-import Session.FlightFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -27,8 +26,6 @@ public class PrenotaServlet extends HttpServlet {
     
     @EJB
     private PrenotazioniFacade pa;
-    @EJB
-    private FlightFacade fDecrementa;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -58,26 +55,19 @@ public class PrenotaServlet extends HttpServlet {
         String colonna=request.getParameter("colonna");
         Integer val=Integer.parseInt(value);
         String ar=request.getParameter("ar");
-        String posti=request.getParameter("posti");
-        Integer postiLiberi=Integer.parseInt(posti);
-        String nposti=request.getParameter("nposti");
-        Integer postiSelezionati=Integer.parseInt(nposti);
+
 
         if(riga!=null && colonna!=null)
         {
            Integer rig=Integer.parseInt(riga);
            Integer col=Integer.parseInt(colonna);
            pa.prenotaCompleta(val, rig, col);
-           fDecrementa.FlightDecrease(val,postiLiberi,postiSelezionati);
+
         }
         else
-        { // c'è il discorso che possiamo o iterare la funzione con un while per prenotare più posti o modificare la prenota passandogli anche il numero posti.
-            // provo con un for per ora poi non sò se con la concorrenza andrà bene uguale, se pensi di poterlo far meglio vedi te =P
-            for(int i=postiSelezionati;i>0;i--)
-            {
-                 pa.prenotaVeloce(val);
-            }
-            fDecrementa.FlightDecrease(val,postiLiberi,postiSelezionati);
+        {
+            pa.prenotaVeloce(val);
+
         }
         if(ar!=null && ar.equals("AR"))
         {

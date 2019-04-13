@@ -11,7 +11,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 /**
  *
@@ -31,16 +30,6 @@ public class FlightFacade extends AbstractFacade<Flight> {
     public FlightFacade() {
         super(Flight.class);
     }
-    
-
-    public void FlightDecrease(int idVolo,int postiLib, int postiSel){
-        //penso si possa lasciare cosi per prenotaziini multiple se cicliamo sulla chiamata prima.
-        Integer risultato= postiLib-postiSel;
-        Query query = em.createQuery("UPDATE Flight SET posti="+risultato+" WHERE idVolo="+idVolo);
-        query.executeUpdate();
-        
-        
-    }   
     
     public List<Flight> getTratte(String partenza, String arrivo, String data){
         List<Flight> result = em.createNamedQuery("Flight.findByTrattaAerea")
