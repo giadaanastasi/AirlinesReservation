@@ -62,6 +62,41 @@ public class PostiServlet extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet PrenotaServlet</title>"); 
             out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/theme.css\" media=\"screen\">");
+            out.println("<script>");
+            out.println(""
+                    + "var contoPosti=0;"
+                    + "var arr = [];"
+                    + "var websocket = new WebSocket(\"ws://localhost:8080/PrenotazioniWeb/AirplaneServerEndpoint\");"
+                    + "function clickButton(elem, nposti){ "
+                    + "console.log(nposti);"
+                        + "if(elem.id == \"libero\"){"
+                            + "contoPosti++;"
+                            + "if (contoPosti>nposti){"
+                    + "contoPosti--;"
+                                + "alert(\"Hai scelto di prenotare \"+nposti+\"posti\");"
+                            + "}else{"
+                                + "elem.id=\"bloccato\";websocket.send(elem.name);"
+                            + " } "
+                        + "}else if(elem.id == \"bloccato\"){console.log(\"dentro decr\");contoPosti--;console.log(contoPosti);elem.id=\"libero\";}"
+                        + "controllaPosti(elem, nposti)"
+                    + "}"
+                    + "function controllaPosti(elem, nposti){"
+                        + "if(contoPosti==nposti){"
+                        + "document.getElementById(\"continua\").disabled=false;"
+                    + "}"
+                    + "if (contoPosti!=nposti){"
+                    + "document.getElementById(\"continua\").disabled=true;}}"
+                    + "function aggiungi(id){"
+                        + "arr.push(id);"
+                    + "}"
+                    + "websocket.onmessage= function processMessage(message){"
+                        + "document.getElementsByName(message.data)[0].id=\"bloccato\";"
+                        + "console.log(document.getElementsByName(message.data)[0]);"
+                    + "}"
+                    + ""
+                    
+                    );
+            out.println("</script>");
             out.println("</head>");
             out.println("<body>");
             out.println("<header>");
@@ -81,13 +116,14 @@ public class PostiServlet extends HttpServlet {
                 
         out.println("<tbody>");
         out.println("<td> </td>");
+        
         String ar = request.getParameter("ar");
         String partenza=request.getParameter("arrivo");
         String arrivo=request.getParameter("partenza");
-        String posti=request.getParameter("posti");
+
         String data=request.getParameter("data");
-        String postiSel=request.getParameter("nposti");
-        // c'è da prestare attenzione ai nomi semmai cambiarli e rimetterli un pò più significativi
+        // questi ci sta che non servano neppure ora vediamo
+
         
         for(int j=0; j<15; j++){
             out.println("<td>"+j+"</td>");
@@ -101,16 +137,39 @@ public class PostiServlet extends HttpServlet {
                     //out.println("<tr>");
                     List<MatricePosti> res = mpf.cercaOccupati(val, i, j);
                     if(res.isEmpty()){
-                        out.println("<td><a href=\"./PrenotaServlet?idvolo="+val+"&ar="+ar+"&partenza="+partenza+"&arrivo="+arrivo+"&data="+data+"&riga="+i+"&colonna="+j+"&posti="+posti+"&nposti="+postiSel+"\"><button name=\"idvolo\" id=\"libero\" value=\"${flightList.idvolo}\" >L</button></a></td>");
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                        out.println("<td><button name=\""+i+"_"+j+"\" id=\"libero\" value=\"${flightList.idvolo}\" onclick=\" clickButton(this, "+postiSel+")\" >L</button></a></td>");
+=======
+
+                        out.println("<td><a href=\"./PrenotaServlet?idvolo="+val+"&ar="+ar+"&partenza="+partenza+"&arrivo="+arrivo+"&data="+data+"&riga="+i+"&colonna="+j+"\"><button name=\"idvolo\" id=\"libero\" value=\"${flightList.idvolo}\" >L</button></a></td>");
+
+>>>>>>> 7edc996ffa06cd184325d40711ccc5c77b317b40
+=======
+
+                        out.println("<td><a href=\"./PrenotaServlet?idvolo="+val+"&ar="+ar+"&partenza="+partenza+"&arrivo="+arrivo+"&data="+data+"&riga="+i+"&colonna="+j+"\"><button name=\"idvolo\" id=\"libero\" value=\"${flightList.idvolo}\" >L</button></a></td>");
+
+>>>>>>> 7edc996ffa06cd184325d40711ccc5c77b317b40
+=======
+
+                        out.println("<td><a href=\"./PrenotaServlet?idvolo="+val+"&ar="+ar+"&partenza="+partenza+"&arrivo="+arrivo+"&data="+data+"&riga="+i+"&colonna="+j+"\"><button name=\"idvolo\" id=\"libero\" value=\"${flightList.idvolo}\" >L</button></a></td>");
+
+>>>>>>> 7edc996ffa06cd184325d40711ccc5c77b317b40
                     } else{
                         out.println("<td><button id=\"occupato\"  disabled>O</button></td>");
-                    }  
+                    } 
+                    
                     
                 }
                 out.println("</tr>");
             }
             out.println("</tbody>");
             out.println("</table>");
+            
+            //BOTTONE CHE FA PARTIRE LA PRENOTAZIONE DI PIù POSTI SELEZIONATI
+                    out.println("<<a href=\"./PrenotaServlet?idvolo="+val+"&ar="+ar+"&partenza="+partenza+"&arrivo="+arrivo+"&data="+data+"&riga"+1+"=&colonna"+2+"=&posti="+posti+"&nposti="+postiSel+"\"><button id=\"continua\" disabled>PROCEDI CON LA PRENOTAZIONE</button>");
+                    
             out.println("</body>");
             out.println("</html>");
         }

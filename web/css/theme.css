@@ -200,6 +200,12 @@ header{
     width: 40px;
 }
 
+#bloccato{
+    background-color: yellow;
+    height: 40px;
+    width: 40px;
+}
+
 #logo{
 	position: absolute;
 	right: 15px;

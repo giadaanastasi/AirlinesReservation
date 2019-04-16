@@ -58,17 +58,17 @@
                     <th>Data</th>
                     <th>Ora</th>
                     <th>Prezzo</th>
-                    <th>Numero Posti Liberi</th>
+
                     <th>Prenotazione con Posto</th>
                     <th>Prenotazione Veloce</th>
-                    
+
                     </tr>
                     
                     <
                     <c:set var="no" value= "peso" />
                     <c:set var="data2" value= "${data2}" />
                     <c:set var="ar" value= "${ar}" />
-                    <c:set var="nposti" value= "${nposti}" />
+
 
                        <c:forEach items="${flightList}" var="flightList">
                         <tr>
@@ -79,9 +79,9 @@
                            <td> ${flightList.data} </td>
                            <td> ${flightList.ora} </td>
                            <td> ${flightList.costo} </td>
-                           <td> ${flightList.posti} </td>
-                           <td> <a href="./PostiServlet?idvolo=${flightList.idVolo}&ar=${ar}&partenza=${flightList.partenza}&arrivo=${flightList.arrivo}&data=${data2}&posti=${flightList.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList.idVolo}">Bottone</button></a> </td>
-                           <td> <a href="./PrenotaServlet?idvolo=${flightList.idVolo}&ar=${ar}&partenza=${flightList.arrivo}&arrivo=${flightList.partenza}&data=${data2}&posti=${flightList.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList.idVolo}">Bottone</button></a> </td>
+
+                           <td> <a href="./PostiServlet?idvolo=${flightList.idVolo}&ar=${ar}&partenza=${flightList.partenza}&arrivo=${flightList.arrivo}&data=${data2}"><button name="idvolo" value="${flightList.idVolo}">Bottone</button></a> </td>
+                           <td> <a href="./PrenotaServlet?idvolo=${flightList.idVolo}&ar=${ar}&partenza=${flightList.arrivo}&arrivo=${flightList.partenza}&data=${data2}"><button name="idvolo" value="${flightList.idVolo}">Bottone</button></a> </td>
                                    
                         </tr>
 
@@ -94,10 +94,10 @@
                                     <td> ${flightList2.data} </td>
                                     <td> ${flightList2.ora} </td>
                                     <td> ${flightList2.costo} </td>
-                                    <td> ${flightList2.posti} </td>
-                                   
-                                 <td> <a href="./PostiServlet?idvolo=${flightList2.idVolo}&posti=${flightList2.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList2.idVolo}">Bottone</button></a> </td>
-                                 <td> <a href="./PrenotaServlet?idvolo=${flightList2.idVolo}&posti=${flightList2.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList2.idVolo}">Bottone</button></a> </td>
+                          
+                                 <td> <a href="./PostiServlet?idvolo=${flightList2.idVolo}"><button name="idvolo" value="${flightList2.idVolo}">Bottone</button></a> </td>
+                                 <td> <a href="./PrenotaServlet?idvolo=${flightList2.idVolo}"><button name="idvolo" value="${flightList2.idVolo}">Bottone</button></a> </td>
+
                              
                               </tr>
 
