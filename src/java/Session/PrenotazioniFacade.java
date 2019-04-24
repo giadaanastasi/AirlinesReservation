@@ -21,7 +21,6 @@ import javax.swing.JOptionPane;
  */
 @Stateless
 public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
-
     @PersistenceContext(unitName = "PrenotazioniWebPU")
     private EntityManager em;
     
@@ -59,7 +58,7 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
         return temp;
     }
     
-    public void prenotaCompleta(Integer idvolo, Integer riga, Integer colonna)
+    public void prenotaCompleta(Integer idvolo, String lista)
     {
         try{
             Integer idprenotaz= getRandomNumberInRange();
@@ -79,11 +78,17 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
             
             em.persist(mprenot);
             em.flush();
+            String[] arr=lista.split(";");
+        
+        for(int i=0; i<arr.length; i++){
+            Integer riga=Integer.parseInt(arr[i].split("_")[0]);
+            Integer colonna=Integer.parseInt(arr[i].split("_")[1]);
             
             MatricePosti mposto=new MatricePosti(idvolo, idprenotaz, riga, colonna);
             
             em.persist(mposto);
             em.flush();
+        }    
             
         }catch(Exception e){
             throw new EJBException(e.getMessage());
@@ -91,7 +96,7 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
     
     }
     
-    public void prenotaVeloce(Integer idvolo)
+    public void prenotaVeloce(Integer idvolo, Integer numPosti)
     {
         try{
             Integer idprenotaz= getRandomNumberInRange();
@@ -108,9 +113,9 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
             
             String passwd="ciao";
             Prenotazioni mprenot  = new Prenotazioni(idprenotaz,idvolo,passwd);
-            
-            int colonna=getRandomPosto(1);
-            int riga=getRandomPosto(0);
+            for(int i=0; i<numPosti; i++){
+              int colonna=getRandomPosto(1);
+              int riga=getRandomPosto(0);
             
             List<MatricePosti> listaPosti=em.createNamedQuery("MatricePosti.findByRigaAndColonna")
                         .setParameter("iDvolo", idvolo)
@@ -129,6 +134,7 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
                         .getResultList();
             }
             
+            
             MatricePosti mposto=new MatricePosti(idvolo, idprenotaz, riga, colonna);
             
             em.persist(mprenot);
@@ -136,6 +142,8 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
             
             em.persist(mposto);
             em.flush();
+              
+            }
             
         }catch(Exception e){
             throw new EJBException(e.getMessage());

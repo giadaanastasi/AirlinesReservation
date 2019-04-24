@@ -69,7 +69,11 @@ public class Flight implements Serializable {
     @NotNull
     @Column(name = "costo")
     private int costo;
-
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "posti")
+    private int posti;
+    
     public Flight() {
     }
 
@@ -77,16 +81,14 @@ public class Flight implements Serializable {
         this.idVolo = idVolo;
     }
 
-
-    public Flight(Integer idVolo, String partenza, String arrivo, String data, String ora, int costo) {
-
+    public Flight(Integer idVolo, String partenza, String arrivo, String data, String ora, int costo, int posti) {
         this.idVolo = idVolo;
         this.partenza = partenza;
         this.arrivo = arrivo;
         this.data = data;
         this.ora = ora;
         this.costo = costo;
-
+        this.posti= posti;
     }
 
     public Integer getIdVolo() {
@@ -133,11 +135,16 @@ public class Flight implements Serializable {
         return costo;
     }
 
-
-    public void setCosto(int costo) {
+    public void setCosto(int posti) {
         this.costo = costo;
     }
+    public int getPosti() {
+        return posti;
+    }
 
+    public void setPosti(int posti) {
+        this.posti = posti;
+    }
     @Override
     public int hashCode() {
         int hash = 0;

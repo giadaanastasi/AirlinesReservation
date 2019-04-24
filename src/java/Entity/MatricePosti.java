@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class MatricePosti implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @EmbeddedId
     protected MatricePostiPK matricePostiPK;
 

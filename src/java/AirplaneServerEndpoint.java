@@ -32,7 +32,7 @@ public class AirplaneServerEndpoint {
     }
     
     @OnMessage
-    public void handleMessage(String message, Session userSession) throws IOException{
+    public void handleMessage(String message,Session userSession) throws IOException{
         //per mandare messaggio a tutti gli altri connessi
         Iterator<Session> iterator = airplaneUsers.iterator();
         while(iterator.hasNext())

@@ -102,29 +102,10 @@ public class myServlet extends HttpServlet {
         String data=request.getParameter("data");
         //response.getWriter().println("Partenza: "+partenza +", arrivo: "+arrivo);
        // aggiunto una lista per il ritorno invertendo i campi di arr ritorno.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         String nposti=request.getParameter("posti");
         request.setAttribute("nposti",nposti);
         List<Flight> flightList2 = fa.getTratte(partenza,arrivo,data);
         request.setAttribute("flightList2",flightList2);
-=======
-=======
->>>>>>> 7edc996ffa06cd184325d40711ccc5c77b317b40
-=======
->>>>>>> 7edc996ffa06cd184325d40711ccc5c77b317b40
-        
-            List<Flight> flightList2 = fa.getTratte(partenza,arrivo,data);
-            request.setAttribute("flightList2",flightList2);
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 7edc996ffa06cd184325d40711ccc5c77b317b40
-=======
->>>>>>> 7edc996ffa06cd184325d40711ccc5c77b317b40
-=======
->>>>>>> 7edc996ffa06cd184325d40711ccc5c77b317b40
         
 
         
@@ -159,14 +140,14 @@ public class myServlet extends HttpServlet {
         String arrivo=request.getParameter("Arrivo");
         String data=request.getParameter("dataandata");
         String data2=request.getParameter("dataritorno");
-
+        String nposti=request.getParameter("nposti");
         //response.getWriter().println("Partenza: "+partenza +", arrivo: "+arrivo);
        // aggiunto una lista per il ritorno invertendo i campi di arr ritorno.
         List<Flight> flightList = fa.getTratte(partenza, arrivo,data);
         request.setAttribute("flightList", flightList);
         request.setAttribute("ar", ar);       
         request.setAttribute("data2", data2);
-
+        request.setAttribute("nposti",nposti);
         //response.getWriter().println(flightList.size());
         request.setAttribute("peso", flightList.size());
         if(flightList.isEmpty()){

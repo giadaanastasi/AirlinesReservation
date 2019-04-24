@@ -6,6 +6,7 @@
 package Session;
 
 import Entity.MatricePosti;
+import Entity.MatricePostiPK;
 import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -21,6 +22,8 @@ public class MatricePostiFacade extends AbstractFacade<MatricePosti> {
 
     @PersistenceContext(unitName = "PrenotazioniWebPU")
     private EntityManager em;
+    
+    private String lista;
 
     @Override
     protected EntityManager getEntityManager() {
@@ -29,6 +32,7 @@ public class MatricePostiFacade extends AbstractFacade<MatricePosti> {
 
     public MatricePostiFacade() {
         super(MatricePosti.class);
+        lista="";
     }
     
     public String converti(int j){
@@ -64,7 +68,21 @@ public class MatricePostiFacade extends AbstractFacade<MatricePosti> {
                 .setParameter("colonna", colonna)
                 .getResultList();
         return lista;
-        
+    }
+    
+    public List<MatricePosti> elencoOccupati(int id_volo){
+        List<MatricePosti> lista  = em.createNamedQuery("MatricePosti.findByIDvolo")
+                .setParameter("iDvolo", id_volo)
+                .getResultList();
+        return lista;
+    }
+    
+    public void add_lista(String elem){
+        lista=lista+elem;
+    }
+    
+    public String return_lista(){
+        return lista;
     }
     
 }

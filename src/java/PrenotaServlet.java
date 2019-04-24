@@ -5,6 +5,7 @@
  */
 
 import Session.PrenotazioniFacade;
+import Session.FlightFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -26,6 +27,8 @@ public class PrenotaServlet extends HttpServlet {
     
     @EJB
     private PrenotazioniFacade pa;
+    @EJB
+    private FlightFacade fDecrementa;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -49,46 +52,57 @@ public class PrenotaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-
+         
+       response.getWriter().println("dentro do Post");
         String value=request.getParameter("idvolo");
-        String riga=request.getParameter("riga");
-        String colonna=request.getParameter("colonna");
+        
         Integer val=Integer.parseInt(value);
         String ar=request.getParameter("ar");
-
-
-        if(riga!=null && colonna!=null)
-        {
-           Integer rig=Integer.parseInt(riga);
-           Integer col=Integer.parseInt(colonna);
-           pa.prenotaCompleta(val, rig, col);
-
+        String posti=request.getParameter("posti");
+        Integer postiLiberi=Integer.parseInt(posti);
+        String nposti=request.getParameter("nposti");
+        Integer postiSelezionati=Integer.parseInt(nposti);
+        String lista=request.getParameter("lista_posti");
+        response.getWriter().println("lista: "+lista);
+        if(lista!=null){
+            response.getWriter().println("dentro lista non nulla");
+            
+        
+           response.getWriter().println("Dentro prenota completa");
+           
+           pa.prenotaCompleta(val, lista);
+           fDecrementa.FlightDecrease(val,postiLiberi,postiSelezionati);
+        
+        // c'è il discorso che possiamo o iterare la funzione con un while per prenotare più posti o modificare la prenota passandogli anche il numero posti.
+            // provo con un for per ora poi non sò se con la concorrenza andrà bene uguale, se pensi di poterlo far meglio vedi te =P
+        }else{
+            pa.prenotaVeloce(val, postiSelezionati);
+            fDecrementa.FlightDecrease(val,postiLiberi,postiSelezionati);
         }
-        else
-        {
-            pa.prenotaVeloce(val);
-
-        }
+        
+        //response.getWriter().println("riga: "+riga);
+        //response.getWriter().println("colonna: "+colonna);
+        
         if(ar!=null && ar.equals("AR"))
         {
             String partenza=request.getParameter("partenza");
             String arrivo=request.getParameter("arrivo");
             String data=request.getParameter("data2");
             request.getRequestDispatcher("./myServlet").forward(request, response);
+            
         }
         else
         {
          request.getRequestDispatcher("completata.jsp").forward(request, response);
         }
+        
     }
 
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
        
-        
     }
 
 
