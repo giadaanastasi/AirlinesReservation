@@ -42,6 +42,13 @@ public class AirplaneServerEndpoint {
     @OnClose
     public void handleClose(Session userSession){
         airplaneUsers.remove(userSession);
+        // qui bisogna inviare a tutti che si devono rimuovere gli elementi 
+        // che sono stati cliccati da tale utente
+        // lo abbiamo nella struttura di appoggio l'elenco dei posti selezionati
+        // creiamo un messaggio con message = id_volo+riga_ocolonna+"elimina"
+        /*Iterator<Session> iterator = airplaneUsers.iterator();
+        while(iterator.hasNext())
+            iterator.next().getBasicRemote().sendText(message);*/
     }
     
     
