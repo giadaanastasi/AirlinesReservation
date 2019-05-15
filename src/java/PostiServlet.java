@@ -142,6 +142,7 @@ public class PostiServlet extends HttpServlet {
                             + "document.getElementById(\"aumenta\").disabled=true;"
                             + "}"
                     + ""
+    
                     + "websocket.onmessage= function processMessage(message){"
                         + "var array = message.data.split(\";\");"
                         + "if (array[2]=="+value+" && array[1]==\"bloccato\"){"
@@ -159,6 +160,7 @@ public class PostiServlet extends HttpServlet {
                     + "}"
                         + "console.log(document.getElementsByName(message.data)[0]);"
                     + "}"
+                    
                     + ""
                     
                     );
