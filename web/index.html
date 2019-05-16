@@ -1,47 +1,100 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 
 <html lang="it">
-	<head>		
-		<meta charset="utf-8"> 
-    	<meta name = "author" content = "Sudoku Mania">
-    	<meta name = "keywords" content = "sudoku, mania, giochi, online">
-   		<link rel="shortcut icon" type="image/x-icon" href="./immagini/logoFinale.png">
-   		<!link rel="stylesheet" type="text/css" href="./css/theme.css" media="screen">
-                <link rel="stylesheet"  href="./css/style.css">
-                <link rel="stylesheet" href="css/magnific-popup.css">
-             
-                
-                
-                
+	<head>
+		<meta charset="utf-8">
 		<title>Airline Reservations</title>
-		<script>
-			function Init(){
+		<meta name="autori" content="Airline Reservation">
+		<link rel="shortcut icon" type="image/x-icon" href="./immagini/logoFinale.png">
+   		<link rel="stylesheet" type="text/css" href="./css/theme.css" media="screen">
+        <link rel="stylesheet"  href="./css/style.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">	
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Themify Icons-->
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+
+	<script>
+		function Init(){
 				document.getElementById("ritorno").disabled=true;
 			}
-			function OnRadioStateChange () {
+		function OnRadioStateChange () {
 				document.getElementById("ritorno").disabled=false;				
 			}
-		</script>
-  	</head>
-  	<body onload="Init()"> 
-	  		<header>
-				<nav>
+	</script>
+
+	</head>
+	<body onload="Init()">	
+		<div class="gtco-loader"></div>
+			<div id="page">
+
+	
+	<!-- <div class="page-inner"> -->
+	<nav class="gtco-nav" role="navigation">
+		<div class="gtco-container">
+			
+			<div class="row">
+				<div class="col-sm-4 col-xs-12">
+					<div id="gtco-logo"><a href="index.html">Airline Reservations <em>.</em></a></div>
+				</div>
+				<div class="col-xs-8 text-right menu-1">
 					<ul>
-						<li ><a href="index.html" id="current" >Home</a></li>
-						<li><a href="html/voli.html" >I miei voli</a></li>
-						  <li><a href="html/instructions.html" >Regolamento</a></li>	
-					</ul>
-				</nav>
-			</header>
-			<nav id="aereo">
-				<img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
-			 </nav>
-			 <section id="main">
+						<li><a href="html/voli.html">I miei voli</a></li>
+						<li><a href="html/instructions.html">Regolamento</a></li>
+					</ul>	
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+	
+	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(images/img_bg_2.jpg)">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-left">
+					<nav id="aereo">
+						<img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
+					</nav>
+
+					<div class="row row-mt-15em">
+						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+							<h1>Vuoi organizzare il tuo viaggio nel mondo? </h1>	
+						</div>
+						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+							<div class="form-wrap">
+								<div class="tab">
+									 <section id="main">
 			   <form  method="post" action="/PrenotazioniWeb/myServlet">
                                 <div class="tab">
                                     <div class="tab-content">
 					<div class="tab-content-inner active" data-content="signup">
-                                            <div id="da"><label>Partenza da: </label><input type="text" name="Partenza" required></div>
+									<div class="tab-content">
+										<div class="tab-content-inner active" data-content="signup">
+											<h3>Prenota il tuo viaggio</h3>
+											<!form action="#">
+												<div class="row form-group">
+													<div class="col-md-12">
+
+														<div id="da"><label>Partenza da: </label><input type="text" name="Partenza" required></div>
                                             <div id="a"><label>Arrivo a: </label><input type="text" name="Arrivo" required></div>
                                             <div id="tipoVolo">
                                                 <input type="radio" id="radio_A" name="type" value="A" onchange="Init()"> Solo Andata
@@ -67,11 +120,32 @@
                                            </select>  
                                         </div>
 				   	<div id="pulsante"> <input type="submit" value="Trova"></div> 
+														
+								</div>
+                                                                                                    
+							</div>
+                                                                                              
+						</div>
+                                                                            
+					</div>
+							
+					
+				</div>
+			</div>
+		</div>
+                           </form>
+                                                                         </section>
+                                                                </div>
+                                                        </div>
+                                                </div>
                                         </div>
-                                    </div>
                                 </div>
-				   	<!--manca php-->
-			   </form><br>
-		   </section>
+                        </div>
+                </div>
+	</header>
+                        </div>
+	
+	
 	</body>
 </html>
+
