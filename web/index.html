@@ -6,8 +6,14 @@
     	<meta name = "author" content = "Sudoku Mania">
     	<meta name = "keywords" content = "sudoku, mania, giochi, online">
    		<link rel="shortcut icon" type="image/x-icon" href="./immagini/logoFinale.png">
-   		<link rel="stylesheet" type="text/css" href="./css/theme.css" media="screen">
-		<title>PIANTA POSTI</title>
+   		<!link rel="stylesheet" type="text/css" href="./css/theme.css" media="screen">
+                <link rel="stylesheet"  href="./css/style.css">
+                <link rel="stylesheet" href="css/magnific-popup.css">
+             
+                
+                
+                
+		<title>Airline Reservations</title>
 		<script>
 			function Init(){
 				document.getElementById("ritorno").disabled=true;
@@ -32,36 +38,38 @@
 			 </nav>
 			 <section id="main">
 			   <form  method="post" action="/PrenotazioniWeb/myServlet">
-				   	<div id="da"><label>Partenza da: </label><input type="text" name="Partenza" required></div>
-				   	<div id="a"><label>Arrivo a: </label><input type="text" name="Arrivo" required></div>
-					<div id="tipoVolo">
-							<input type="radio" id="radio_A" name="type" value="A" onchange="Init()"> Solo Andata
-						<input type="radio" id="radio_AR" name="type" value="AR" onchange="OnRadioStateChange()"> Andata-Ritorno
-					</div>
-					<div id="dataA">
-						<label>Scegli la data di Andata: 
-							<input type="date" id="andata" name="dataandata" required>
-						</label>
-					</div>
-					<div id="dataR">
-							<label>Scegli la data di Ritorno: 
-								<input type="date" id="ritorno" name="dataritorno">
-							</label>
-                                            
-						</div>
-                                        <div id="selezione">
-                                           <select  name="nposti">
+                                <div class="tab">
+                                    <div class="tab-content">
+					<div class="tab-content-inner active" data-content="signup">
+                                            <div id="da"><label>Partenza da: </label><input type="text" name="Partenza" required></div>
+                                            <div id="a"><label>Arrivo a: </label><input type="text" name="Arrivo" required></div>
+                                            <div id="tipoVolo">
+                                                <input type="radio" id="radio_A" name="type" value="A" onchange="Init()"> Solo Andata
+                                                <input type="radio" id="radio_AR" name="type" value="AR" onchange="OnRadioStateChange()"> Andata-Ritorno
+                                            </div>
+                                            <div id="dataA">
+                                                <label>Scegli la data di Andata: 
+                                                    <input type="date" id="andata" name="dataandata" required>
+                                                </label>
+                                            </div>
+                                            <div id="dataR">
+                                                <label>Scegli la data di Ritorno: 
+                                                    <input type="date" id="ritorno" name="dataritorno">
+                                                </label>    
+                                            </div>
+                                            <div id="selezione">
+                                            <select  name="nposti">
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                                 <option value="4">4</option>
                                                 <option value="5">5</option>
-                                           </select> 
-                                            
+                                           </select>  
                                         </div>
-                                        
-                                        
 				   	<div id="pulsante"> <input type="submit" value="Trova"></div> 
+                                        </div>
+                                    </div>
+                                </div>
 				   	<!--manca php-->
 			   </form><br>
 		   </section>
