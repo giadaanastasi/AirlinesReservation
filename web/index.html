@@ -2,150 +2,132 @@
 
 <html lang="it">
 	<head>
-		<meta charset="utf-8">
-		<title>Airline Reservations</title>
-		<meta name="autori" content="Airline Reservation">
-		<link rel="shortcut icon" type="image/x-icon" href="./immagini/logoFinale.png">
-   		<link rel="stylesheet" type="text/css" href="./css/theme.css" media="screen">
-        <link rel="stylesheet"  href="./css/style.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">	
-
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Themify Icons-->
-	<link rel="stylesheet" href="css/themify-icons.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-	<!-- Modernizr JS -->
-	<!--script src="js/modernizr-2.6.2.min.js"></script-->
+            <meta charset="utf-8">
+            <title>Airline Reservations</title>
+            <meta name="autori" content="Airline Reservation">
+            <link rel="shortcut icon" type="image/x-icon" href="./immagini/logoFinale.png">
+            <link rel="stylesheet" type="text/css" href="./css/theme.css" media="screen">
+            <link rel="stylesheet"  href="./css/style.css">
+            <link rel="stylesheet" href="css/magnific-popup.css">
+            <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+            <!-- Animate.css -->
+            <link rel="stylesheet" href="css/animate.css">
+            <!-- Icomoon Icon Fonts-->
+            <link rel="stylesheet" href="css/icomoon.css">
+            <!-- Themify Icons-->
+            <link rel="stylesheet" href="css/themify-icons.css">
+            <!-- Bootstrap  -->
+            <link rel="stylesheet" href="css/bootstrap.css">
+            <!-- Magnific Popup -->
+            <link rel="stylesheet" href="css/magnific-popup.css">
+            <!-- Magnific Popup -->
+            <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+            <!-- Owl Carousel  -->
+            <link rel="stylesheet" href="css/owl.carousel.min.css">
+            <link rel="stylesheet" href="css/owl.theme.default.min.css">
+            <!-- Theme style  -->
+            <link rel="stylesheet" href="css/style.css">
+            <!-- Modernizr JS -->
+            <!--script src="js/modernizr-2.6.2.min.js"></script-->
 
 	<script>
-		function Init(){
-				document.getElementById("ritorno").disabled=true;
-			}
-		function OnRadioStateChange () {
-				document.getElementById("ritorno").disabled=false;				
-			}
+            function Init(){
+		document.getElementById("ritorno").disabled=true;
+            }   
+            function OnRadioStateChange () {
+		document.getElementById("ritorno").disabled=false;				
+            }
 	</script>
-
 	</head>
 	<body onload="Init()">	
-		<div class="gtco-loader"></div>
-			<div id="page">
-
-	
-	<!-- <div class="page-inner"> -->
-	<nav class="gtco-nav" role="navigation">
+            <div class="gtco-loader"></div>
+                <div id="page">
+                <nav class="gtco-nav" role="navigation">
 		<div class="gtco-container">
-			
-			<div class="row">
-				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="index.html">Airline Reservations <em>.</em></a></div>
-				</div>
-				<div class="col-xs-8 text-right menu-1">
-					<ul>
-						<li><a href="html/voli.html">I miei voli</a></li>
-						<li><a href="html/instructions.html">Regolamento</a></li>
-					</ul>	
-				</div>
+                    <div class="row">
+			<div class="col-sm-4 col-xs-12">
+                            <div id="gtco-logo"><a href="index.html">Airline Reservations <em>.</em></a>
+                            </div>
 			</div>
-			
+			<div class="col-xs-8 text-right menu-1">
+                            <ul>
+                                <li><a href="./html/voli.html">I miei voli</a></li>
+                                <li><a href="./html/instructions.html">Regolamento</a></li>
+                            </ul>	
+			</div>
+                    </div>	
 		</div>
-	</nav>
+            </nav>
 	
 	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" >
-		<div class="overlay"></div>
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0 text-left">
-					<nav id="aereo">
-						<img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
-					</nav>
-
-					<div class="row row-mt-15em">
-						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Vuoi organizzare il tuo viaggio nel mondo? </h1>	
-						</div>
-						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
-							<div class="form-wrap">
-								<div class="tab">
-									 <section id="main">
-			   <form  method="post" action="/PrenotazioniWeb/myServlet">
+            <div class="overlay"></div>
+                <div class="gtco-container">
+                    <div class="row">
+			<div class="col-md-12 col-md-offset-0 text-left">
+			<nav id="aereo">
+                            <img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
+			</nav>
+                        <div class="row row-mt-15em">
+                            <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+                                <h1>Vuoi organizzare il tuo viaggio nel mondo? </h1>	
+                            </div>
+			<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+                            <div class="form-wrap">
+				<div class="tab">
+				<section id="main">
+                                <form  method="post" action="/PrenotazioniWeb/myServlet">
                                 <div class="tab">
                                     <div class="tab-content">
 					<div class="tab-content-inner active" data-content="signup">
-									<div class="tab-content">
-										<div class="tab-content-inner active" data-content="signup">
-											<h3>Prenota il tuo viaggio</h3>
-											<!form action="#">
-												<div class="row form-group">
-													<div class="col-md-12">
-
-														<div id="da"><label>Partenza da: </label><input type="text" name="Partenza" required></div>
-                                            <div id="a"><label>Arrivo a: </label><input type="text" name="Arrivo" required></div>
-                                            <div id="tipoVolo">
-                                                <input type="radio" id="radio_A" name="type" value="A" onchange="Init()"> Solo Andata
-                                                <input type="radio" id="radio_AR" name="type" value="AR" onchange="OnRadioStateChange()"> Andata-Ritorno
-                                            </div>
-                                            <div id="dataA">
-                                                <label>Scegli la data di Andata: 
-                                                    <input type="date" id="andata" name="dataandata" required>
-                                                </label>
-                                            </div>
-                                            <div id="dataR">
-                                                <label>Scegli la data di Ritorno: 
-                                                    <input type="date" id="ritorno" name="dataritorno">
-                                                </label>    
-                                            </div>
-                                            <div id="selezione">
-                                            <select  name="nposti">
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                           </select>  
-                                        </div>
-				   	<div id="pulsante"> <input type="submit" value="Trova"></div> 
-														
-								</div>
-                                                                                                    
-							</div>
-                                                                                              
-						</div>
-                                                                            
-					</div>
-							
-					
-				</div>
-			</div>
-		</div>
-                           </form>
-                                                                         </section>
+                                            <div class="tab-content">
+						<div class="tab-content-inner active" data-content="signup">
+						<h3>Prenota il tuo viaggio</h3>
+                                                    <div class="row form-group">
+							<div class="col-md-12">
+                                                            <div id="da"><label>Partenza da: </label><input type="text" name="Partenza" required></div>
+                                                            <div id="a"><label>Arrivo a: </label><input type="text" name="Arrivo" required></div>
+                                                                <div id="tipoVolo">
+                                                                    <input type="radio" id="radio_A" name="type" value="A" onchange="Init()"> Solo Andata
+                                                                    <input type="radio" id="radio_AR" name="type" value="AR" onchange="OnRadioStateChange()"> Andata-Ritorno
                                                                 </div>
+                                                                <div id="dataA">
+                                                                    <label>Scegli la data di Andata: 
+                                                                        <input type="date" id="andata" name="dataandata" required>
+                                                                    </label>
+                                                                </div>
+                                                                <div id="dataR">
+                                                                    <label>Scegli la data di Ritorno: 
+                                                                        <input type="date" id="ritorno" name="dataritorno">
+                                                                    </label>    
+                                                                </div>
+                                            <div id="selezione">
+                                                <select  name="nposti">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                               </select>  
+                                            </div>
+				   	<div id="pulsante"> <input type="submit" value="Trova"></div> 
                                                         </div>
+                                                    </div>
                                                 </div>
+                                            </div>	
                                         </div>
+                                    </div>
                                 </div>
+                                </form>
+                                </section>
+                                </div>
+                            </div>
                         </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
 	</header>
-                        </div>
-	
-	
+                </div>
 	</body>
 </html>
 
