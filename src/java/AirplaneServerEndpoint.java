@@ -105,7 +105,7 @@ public class AirplaneServerEndpoint {
             Posto temp = occupati.get(key);
             if(temp.getId() == userSession.getId()){
                 asb.remove(key.toString());
-                String message = key.toString().split("_")[1]+"_"+key.toString().split("_")[2]+";libero;"+key.toString().split("_")[0];
+                String message = key.toString().split("_")[1]+"_"+key.toString().split("_")[2]+";chiuso;"+key.toString().split("_")[0];
                 Iterator<Session> iterator = airplaneUsers.iterator();
                 while(iterator.hasNext()){
                     iterator.next().getBasicRemote().sendText(message);
