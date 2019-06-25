@@ -17,20 +17,20 @@
 	<meta name="twitter:card" content="" />
         
         
-        <!link rel="shortcut icon" type="image/x-icon" href="./immagini/logoFinale.png">
-        <!link rel="stylesheet" type="text/css" href="./css/theme.css" media="screen">
-        <!link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-        <!link rel="stylesheet" href="./css/animate.css">
-        <!link rel="stylesheet" href="./css/icomoon.css">
-        <!link rel="stylesheet" href="./css/themify-icons.css">
-        <!link rel="stylesheet" href="./css/flexslider.css">
-        <!link rel="stylesheet" href="./css/bootstrap.css">
-        <!link rel="stylesheet" href="./css/magnific-popup.css">
-        <!ink rel="stylesheet" href="./css/bootstrap-datepicker.min.css">
-        <!link rel="stylesheet" href="./css/owl.carousel.min.css">
-        <!link rel="stylesheet" href="./css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="./css/theme.css">
-        <!link rel="stylesheet" href="./css/style.css">
+        <!link rel="shortcut icon" type="image/x-icon" href="./immagini/CieloROSA.jpg">
+        <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="./css/animate.css">
+        <link rel="stylesheet" href="./css/icomoon.css">
+        <link rel="stylesheet" href="./css/themify-icons.css">
+        <link rel="stylesheet" href="./css/flexslider.css">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/magnific-popup.css">
+        <link rel="stylesheet" href="./css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="./css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+        <!link rel="stylesheet" href="./css/theme.css">
+        <link rel="stylesheet" href="./css/style.css">
         <!-- Modernizr JS -->
         <!--script src="js/modernizr-2.6.2.min.js"></script-->
     <script>
@@ -42,8 +42,8 @@
         }
     </script>
     </head>
-    <body onload="Init()">	
-        <div class="gtco-loader"></div>
+    <body onload="Init()">
+        <div id="sfondo">
             <div id="page">
             <nav class="gtco-nav" role="navigation">
             <div class="gtco-container">
@@ -63,13 +63,12 @@
         </nav>
 
     <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" >
-        <div class="overlay"></div>
+        <div id="aereo" style="background-image: url(./immagini/CieloROSA.jpg);background-repeat:no-repeat;">
+            <!img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
             <div class="gtco-container">
                 <div class="row">
                     <div class="col-md-12 col-md-offset-0 text-left">
-                    <nav id="aereo">
-                        <img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
-                    </nav>
+                    
                     <div class="row row-mt-15em">
                         <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
                             <h1>Vuoi organizzare il tuo viaggio nel mondo? </h1>	
@@ -78,12 +77,12 @@
                         <div class="form-wrap">
                             <div class="tab">
                             <section id="main">
-                            <form  method="post" action="/PrenotazioniWeb/myServlet">
+                            <form  method="post" action="./myServlet">
                             <div class="tab">
                                 <div class="tab-content">
-                                    <div class="tab-content-inner active" data-content="signup">
+                                    <div class="tab-content-inner active" >
                                         <div class="tab-content">
-                                            <div class="tab-content-inner active" data-content="signup">
+                                            <div class="tab-content-inner active">
                                             <h3>Prenota il tuo viaggio</h3>
                                                 <div class="row form-group">
                                                     <div class="col-md-12">
@@ -129,8 +128,10 @@
                     </div>
                 </div>
             </div>
+        </div>
         </header>
             </div>
+        </div>
     </body>
 </html>
 
