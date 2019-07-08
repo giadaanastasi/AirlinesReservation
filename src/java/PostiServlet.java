@@ -150,7 +150,7 @@ public class PostiServlet extends HttpServlet {
                                     + "elem = document.getElementById(\"lista_posti\").value;"
                                     + "temp = elem.split(\";\");"
                                     + "for(i = 0; i<temp.length; i++){"
-                                    + "if(temp[i].id!=\"occupato\"){"
+                                    + "if(document.getElementsByName(temp[i])[0].id!=\"occupato\"){"
                                     + "elimina(temp[i]);"
                                     + "var text = temp[i] + \";libero;\"+"+value+";"
                                         +"websocket.send(text);"                                   
