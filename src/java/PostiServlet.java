@@ -242,9 +242,10 @@ public class PostiServlet extends HttpServlet {
         }
         out.println("</tr>");
             for(int i=0; i<7; i++){
-                out.println("<td>"+mpf.converti(i)+"</td>");
+                
                 //out.println("<tr>");
                 if(i<3){
+                    out.println("<td>"+mpf.converti(i)+"</td>");
                     for(int j=0; j<15; j++){
                     
                     //out.println("<tr>");
@@ -256,11 +257,13 @@ public class PostiServlet extends HttpServlet {
                         out.println("<td><button id=\"occupato\"  disabled><img class=\"img_content_section\" src =\"./immagini/seat.png\" alt=\"pianta\" height=20px width=20px></button></td>");
                     } }
                 }else if(i==3){
+                    out.println("<td></td>");
                         for(int j=0; j<15; j++){
                             out.println("<td></td>");
                         }
                 }else {
                     for(int j=0; j<15; j++){
+                    out.println("<td>"+mpf.converti(i-1)+"</td>");
                     List<MatricePosti> res = mpf.cercaOccupati(val, i-1, j);
                     if(res.isEmpty()){
                         out.println("<td><button name=\""+(i-1)+"_"+j+"\" id=\"libero\" value=\"${flightList.idvolo}\" onclick=\" clickButton(this, "+postiSel+", "+this.lista_posti+")\" ><img class=\"img_content_section\" src =\"./immagini/seat.png\" alt=\"pianta\" height=20px width=20px></button></a></td>");
