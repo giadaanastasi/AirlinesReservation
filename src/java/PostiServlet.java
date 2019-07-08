@@ -119,10 +119,18 @@ public class PostiServlet extends HttpServlet {
                         + "}"
                     + "}"
                     + "function invia(){"
-                    + "elem=document.getElementById(\"lista_posti\").value;"
-                    + "websocket.send(elem+\";occupato;\"+"+value+");"
-                    + "document.getElementById(\"link\").href=document.getElementById(\"link\").href+document.getElementById(\"lista_posti\").value;"
-                    + "}"
+                        + "console.log(\"dentro invia\");"
+                        + "elem=document.getElementById(\"lista_posti\").value;"
+                        + "console.log(\"lista_posti: \"+elem);"
+                        + "temp = elem.split(\";\");"
+                            + "for(i = 0; i<temp.length; i++){"
+                            + "console.log(temp[i]);"
+                            + "websocket.send(temp[i]+\";occupato;\"+"+value+");"
+                        + "}"
+                            + "document.getElementById(\"link\").href=document.getElementById(\"link\").href+document.getElementById(\"lista_posti\").value;"
+                    
+                        
+                        + "}"
                     +"var countDownDate = new Date().setMinutes(new Date().getMinutes()+30);" 
                     +"var x = setInterval(function() {" 
                     +"  var now = new Date();" 
@@ -137,6 +145,17 @@ public class PostiServlet extends HttpServlet {
                             + "location.href='http://localhost:8080/PrenotazioniWeb/';" 
                     +"  }" 
                     +"}, 1000);"
+                                    + ""
+                                    + "function chiudi(){"
+                                    + "elem = document.getElementById(\"lista_posti\").value;"
+                                    + "temp = elem.split(\";\");"
+                                    + "for(i = 0; i<temp.length; i++){"
+                                    + "elimina(temp[i]);"
+                                    + "var text = temp[i] + \";libero;\"+"+value+";"
+                                        +"websocket.send(text);"                                   
+                                            + "}"
+                                    + "}"
+                                    
                     + "function aumenta(){"
                             + "countDownDate = new Date().setMinutes(new Date().getMinutes()+60);"
                             + "document.getElementById(\"aumenta\").disabled=true;"
@@ -154,6 +173,12 @@ public class PostiServlet extends HttpServlet {
                     + "else if (array[2]=="+value+" && array[1]==\"libero\"){"
                      + "document.getElementsByName(array[0])[0].id=\"libero\";"
                     + "document.getElementsByName(array[0])[0].disabled=false;}"
+                            + "else if (array[2]=="+value+" && array[1]==\"chiuso\"){"
+                                    + "console.log(\"chiuso: \"+document.getElementsByName(array[0])[0].name+\" \"+document.getElementsByName(array[0])[0].id);"
+                                    + "if(document.getElementsByName(array[0])[0].id!=\"occupato\"){"
+                                        + "document.getElementsByName(array[0])[0].id=\"libero\";"
+                                        + "document.getElementsByName(array[0])[0].disabled=false;}"
+                    + "}"
                     + "else if(array[2]=="+value+"){"
                      + "document.getElementsByName(array[0])[0].id=\"occupato\";"
                         + "document.getElementsByName(array[0])[0].disabled=true;"
@@ -166,7 +191,7 @@ public class PostiServlet extends HttpServlet {
                     );
             out.println("</script>");
             out.println("</head>");
-            out.println("<body>");
+            out.println("<body onunload=chiudi()>");
             out.println("<header>");
             out.println("<nav>");
             out.println("<ul>");

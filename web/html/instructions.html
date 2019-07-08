@@ -7,42 +7,64 @@ and open the template in the editor.
 <html lang="it">
 	<head>		
 		<meta charset="utf-8"> 
-    	<meta name = "author" content = "Sudoku Mania">
-    	<meta name = "keywords" content = "sudoku, mania, giochi, online">
-   		<link rel="shortcut icon" type="image/x-icon" href="./immagini/logoFinale.png">
-   		<link rel="stylesheet" type="text/css" href="../css/theme.css" media="screen">
-		<title>INSTRUCTIONS</title>
-		<script>
-			function Init(){
-				document.getElementById("ritorno").disabled=true;
-			}
-			function OnRadioStateChange () {
-				document.getElementById("ritorno").disabled=false;				
-			}
-		</script>
+    	
+        <meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+        
+            <link rel="stylesheet" href="../css/animate.css">
+            <link rel="stylesheet" href="../css/icomoon.css">
+            <link rel="stylesheet" href="../css/themify-icons.css">
+            <link rel="stylesheet" href="../css/flexslider.css">
+            <link rel="stylesheet" href="../css/bootstrap.css">
+            <link rel="stylesheet" href="../css/magnific-popup.css">
+            <link rel="stylesheet" href="../css/bootstrap-datepicker.min.css">
+            <link rel="stylesheet" href="../css/owl.carousel.min.css">
+            <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+            <!link rel="stylesheet" href="../css/theme.css">
+            <link rel="stylesheet" href="../css/style.css">
+		<title>FLIGHTS</title>
   	</head>
-  	<body onload="Init()"> 
+  	<body>
+            <div id="page">
 	  		<header>
-				<nav>
-                                    <ul>
-						<li ><a href="../index.html">Home</a></li>
-						<li><a href="voli.html" >I miei voli</a></li>
-						<li><a href="instructions.html" id="current">Regolamento</a></li>	
-					</ul>
-				</nav>
+                             <nav class="gtco-nav" role="navigation">
+            <div class="gtco-container">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <div id="gtco-logo"><a href="../index.html">Airline Reservations <em>.</em></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 text-right menu-1">
+                        <ul>
+                            <li><a href="./voli.html" >I miei voli</a></li>
+                            <li><a href="./instructions.html" id="current">Regolamento</a></li>
+                        </ul>	
+                    </div>
+                </div>	
+            </div>
+        </nav>
 			</header>
 			<nav id="aereo">
 				<img class="img_content_section" src="../immagini/CieloROSA.jpg" alt="pianta" >
 			 </nav>
 			 <section id="main">
-			   <form action="login.php" method="post" >
-                               <h1>REGOLAMENTO DELLE PRENOTAZIONI</h1>
+                             <form action="login.php" method="post" >
+			   <h1>REGOLAMENTO DELLE PRENOTAZIONI</h1>
                                    <ul type="d">
-                                       <li>Per effettuare una prenotazione puoi andare su "Home" e inserire l'aeroporto di partenza e di arrivo, la data di partenza e se vuoi anche la data di ritorno. A questo punto premendo su "Trova" potrai scegliere un volo. Per completate la prenotazione dovrai scegliere un posto a sedere e premere "COnferma". Ecco fatto!</li>
-                                       <li>Per annullare una prenotazione (si può?)..</li>
+                                       <li>Per effettuare una prenotazione puoi andare su "Home" e inserire l'aeroporto di partenza e di arrivo, la data di partenza e se vuoi anche la data di ritorno. A questo punto premendo su "Trova" potrai scegliere un volo. Per completate la prenotazione dovrai scegliere un posto a sedere e premere "Conferma". Ecco fatto!</li>
+                                       <li>Per rivedere la tua prenotazione inserisci nella pagina "I miei voli" l'id che ti è stato consegnato a prenotazione effettuata</li>
                                        <li>Mentre effettui una prenotazione avrai a disposizione un tempo limitato, 30 minuti, per poter pennsre al tuo acquisto. Al termine dei 30 minuti, il posto a sedere che avevi scelto tornerà libero per permettere ad altri utenti di prenotarlo! </li>
                                    </ul>
-			   </form>
+			   </form><br>
 		   </section>
+            </div>
 	</body>
+        
 </html>
