@@ -257,7 +257,7 @@ public class PostiServlet extends HttpServlet {
                     } }
                 }else if(i==3){
                         for(int j=0; j<15; j++){
-                            out.println("<td><\td>");
+                            out.println("<td>\" \"<\td>");
                         }
                 }else {
                     for(int j=0; j<15; j++){
