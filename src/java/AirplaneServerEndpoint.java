@@ -36,19 +36,16 @@ public class AirplaneServerEndpoint {
     public void handleOpen(Session userSession) throws IOException{
         airplaneUsers.add(userSession);
         Map<String, Posto> occupati = asb.getBloccati();
-            Set list  = occupati.keySet(); //ritorna il set delle chiavi
-            Iterator iter = list.iterator();
-
-            while(iter.hasNext()) {
-                Object key = iter.next();
-                
-                    String msg = key.toString().split("_")[1]+"_"+key.toString().split("_")[2]+";bloccato;"+key.toString().split("_")[0];
-                    Iterator<Session> iterator = airplaneUsers.iterator();
-                    while(iterator.hasNext()){
-                        iterator.next().getBasicRemote().sendText(msg);
-                    }
-                
+        Set list  = occupati.keySet(); //ritorna il set delle chiavi
+        Iterator iter = list.iterator();
+        while(iter.hasNext()) {
+            Object key = iter.next();
+            String msg = key.toString().split("_")[1]+"_"+key.toString().split("_")[2]+";bloccato;"+key.toString().split("_")[0];
+            Iterator<Session> iterator = airplaneUsers.iterator();
+            while(iterator.hasNext()){
+                iterator.next().getBasicRemote().sendText(msg);
             }
+        }
     }
     
     @OnMessage
@@ -56,8 +53,6 @@ public class AirplaneServerEndpoint {
         //per mandare messaggio a tutti gli altri connessi
         //aggiungere posto occupato alla lista del volo corrispettivo
         // message = r_c;stato;id_volo
-       
-            
         
         String[] temp = message.split(";");
         Map<String, Posto> occupati = asb.getBloccati();
