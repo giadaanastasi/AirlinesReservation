@@ -75,6 +75,7 @@ public class PostiServlet extends HttpServlet {
         out.println("<link rel=\"stylesheet\" href=\"./css/owl.carousel.min.css\">");
         out.println("<link rel=\"stylesheet\" href=\"./css/owl.theme.default.min.css\">");
             out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/style.css\" media=\"screen\">");
+            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/theme.css\" media=\"screen\">");
             out.println("<script>");
             out.println(""
                     + "var contoPosti=0;"
