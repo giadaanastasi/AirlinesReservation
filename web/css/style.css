@@ -34,6 +34,29 @@ body {
   background: url(./immagini/CieloROSA.jpg") center no-repeat #fff;
 }
 
+#libero{
+    background-color: green;
+    height: 40px;
+    width: 40px;
+}
+#occupato{
+    background-color: red;
+    height: 40px;
+    width: 40px;
+}
+
+#bloccato{
+    background-color: yellow;
+    height: 40px;
+    width: 40px;
+}
+
+#bloccato_altri{
+    background-color: orange;
+    height: 40px;
+    width: 40px;
+}
+
 #sfondo {
 width: 100%; height: 100%; top: 0; left: 0;
 background: url(./immagini/CieloROSA.jpg") center no-repeat center top; position: fixed; z-index: -1;

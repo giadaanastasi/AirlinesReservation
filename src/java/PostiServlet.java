@@ -220,9 +220,7 @@ public class PostiServlet extends HttpServlet {
                 out.println("</div>	");
             out.println("</div>");
         out.println("</nav>");
-            out.println("<nav id=\"aereo\">");
-            out.println("<img class=\"img_content_section\" src=\"./immagini/CieloROSA.jpg\" alt=\"pianta\" >");
-            out.println("</nav>");
+            out.println("<div id=\"aereo\" style=\"background-image: url(./immagini/CieloROSA.jpg); height: 100%;background-attachment: fixed; background-repeat:no-srepeat;\">");
             out.println("<table>");
             
                 
@@ -237,7 +235,7 @@ public class PostiServlet extends HttpServlet {
         String postiSel=request.getParameter("nposti");
         // c'è da prestare attenzione ai nomi semmai cambiarli e rimetterli un pò più significativi
         out.println("<input type=\"text\" id=\"lista_posti\" hidden>");
-        out.println("<h3> Completa la tua prenotazione entro: <div id=\"demo\"></div><h2>");
+        out.println("<h3> Completa la tua prenotazione entro: <div id=\"demo\"></div><h3>");
         out.println("<button id=\"aumenta\" onclick=\"aumenta()\">AUMENTA TEMPO</button>");
         for(int j=0; j<15; j++){
             out.println("<td>"+j+"</td>");
@@ -265,6 +263,7 @@ public class PostiServlet extends HttpServlet {
             
             //BOTTONE CHE FA PARTIRE LA PRENOTAZIONE DI PIù POSTI SELEZIONATI
                     out.println("<a  id=\"link\" href=\"./PrenotaServlet?idvolo="+val+"&ar="+ar+"&partenza="+partenza+"&arrivo="+arrivo+"&data="+data+"&posti="+posti+"&nposti="+postiSel+"&lista_posti=\"><button onclick=\"invia()\" id=\"continua\" disabled>PROCEDI CON LA PRENOTAZIONE</button>");
+            out.println("</div>");
             out.println("</header>");
             out.println("</div>");
             out.println("</div>");
