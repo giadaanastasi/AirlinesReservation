@@ -11,7 +11,7 @@
 *
 * ======================================================= */
 body {
-  background: url(./immagini/CieloROSA.jpg") center no-repeat center top; position: fixed; z-index: -1;
+  background: url("./immagini/CieloROSA.jpg") center no-repeat center top; position: fixed; z-index: -1;
   font-family: "Lato", Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -31,7 +31,7 @@ body {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  background: url(./immagini/CieloROSA.jpg") center no-repeat #fff;
+  background: url("./immagini/CieloROSA.jpg") center no-repeat #fff;
 }
 
 #libero{
