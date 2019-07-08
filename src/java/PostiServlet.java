@@ -233,7 +233,7 @@ public class PostiServlet extends HttpServlet {
                     //out.println("<tr>");
                     List<MatricePosti> res = mpf.cercaOccupati(val, i, j);
                     if(res.isEmpty()){
-                        out.println("<td><button name=\""+i+"_"+j+"\" id=\"libero\" value=\"${flightList.idvolo}\" onclick=\" clickButton(this, "+postiSel+", "+this.lista_posti+")\" ><img src =\"./web/immagini/seat.png\"/></button></a></td>");
+                        out.println("<td><button name=\""+i+"_"+j+"\" id=\"libero\" value=\"${flightList.idvolo}\" onclick=\" clickButton(this, "+postiSel+", "+this.lista_posti+")\" ><img src =\"seat.png\"/></button></a></td>");
                     } else{
                         out.println("<td><button id=\"occupato\"  disabled>O</button></td>");
                     } 
