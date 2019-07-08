@@ -271,7 +271,7 @@ public class PostiServlet extends HttpServlet {
                                 }
                     }
                     
-                    
+                    out.println("</tr>");
                 }
                 out.println("</tr>");
             
