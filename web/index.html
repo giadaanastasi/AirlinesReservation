@@ -5,17 +5,15 @@
         <meta charset="utf-8">
         <title>Airline Reservations</title>
         <meta name="autori" content="Airline Reservation">
-        
         <meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-        
+        <meta property="og:image" content=""/>
+    	<meta property="og:url" content=""/>
+    	<meta property="og:site_name" content=""/>
+    	<meta property="og:description" content=""/>
+    	<meta name="twitter:title" content="" />
+    	<meta name="twitter:image" content="" />
+    	<meta name="twitter:url" content="" />
+    	<meta name="twitter:card" content="" />
         
         <!link rel="shortcut icon" type="image/x-icon" href="./immagini/CieloROSA.jpg">
         <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen">
@@ -31,16 +29,14 @@
         <link rel="stylesheet" href="./css/owl.theme.default.min.css">
         <!link rel="stylesheet" href="./css/theme.css">
         <link rel="stylesheet" href="./css/style.css">
-        <!-- Modernizr JS -->
-        <!--script src="js/modernizr-2.6.2.min.js"></script-->
-    <script>
-        function Init(){
-            document.getElementById("ritorno").disabled=true;
-        }   
-        function OnRadioStateChange () {
-            document.getElementById("ritorno").disabled=false;				
-        }
-    </script>
+        <script>
+            function Init(){
+                document.getElementById("ritorno").disabled=true;
+            }   
+            function OnRadioStateChange () {
+                document.getElementById("ritorno").disabled=false;				
+            }
+        </script>
     </head>
     <body onload="Init()">
         <div id="sfondo">
@@ -61,14 +57,12 @@
                 </div>	
             </div>
         </nav>
-
     <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" >
         <div id="aereo" style="background-image: url(./immagini/CieloROSA.jpg); height: 100%;background-attachment: fixed; background-repeat:no-srepeat;">
             <!img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
             <div class="gtco-container">
                 <div class="row">
                     <div class="col-md-12 col-md-offset-0 text-left">
-                    
                     <div class="row row-mt-15em">
                         <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
                             <h1>Vuoi organizzare il tuo viaggio nel mondo? </h1>	
@@ -79,45 +73,45 @@
                             <section id="main">
                             <form  method="post" action="./myServlet">
                             <div class="tab">
-                                <div class="tab-content">
-                                    <div class="tab-content-inner active" >
-                                        <div class="tab-content">
-                                            <div class="tab-content-inner active">
-                                            <h3>Prenota il tuo viaggio</h3>
-                                                <div class="row form-group">
-                                                    <div class="col-md-12">
-                                                        <div id="da"><label>Partenza da: </label><input type="text" name="Partenza" required></div>
-                                                        <div id="a"><label>Arrivo a: </label><input type="text" name="Arrivo" required></div>
-                                                            <div id="tipoVolo">
-                                                                <input type="radio" id="radio_A" name="type" value="A" onchange="Init()"> Solo Andata
-                                                                <input type="radio" id="radio_AR" name="type" value="AR" onchange="OnRadioStateChange()"> Andata-Ritorno
-                                                            </div>
-                                                            <div id="dataA">
-                                                                <label>Scegli la data di Andata: 
-                                                                    <input type="date" id="andata" name="dataandata" required>
-                                                                </label>
-                                                            </div>
-                                                            <div id="dataR">
-                                                                <label>Scegli la data di Ritorno: 
-                                                                    <input type="date" id="ritorno" name="dataritorno">
-                                                                </label>    
-                                                            </div>
-                                                        <div id="selezione">
-                                                            <select  name="nposti">
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                                <option value="4">4</option>
-                                                                <option value="5">5</option>
-                                                           </select>  
-                                                        </div>
-                                                        <div id="pulsante"> <input type="submit" value="Trova"></div> 
-                                                    </div>
-                                                </div>
+                            <div class="tab-content">
+                            <div class="tab-content-inner active" >
+                            <div class="tab-content">
+                            <div class="tab-content-inner active">
+                            <h3>Prenota il tuo viaggio</h3>
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <div id="da"><label>Partenza da: </label><input type="text" name="Partenza" required></div>
+                                        <div id="a"><label>Arrivo a: </label><input type="text" name="Arrivo" required></div>
+                                            <div id="tipoVolo">
+                                                <input type="radio" id="radio_A" name="type" value="A" onchange="Init()"> Solo Andata
+                                                <input type="radio" id="radio_AR" name="type" value="AR" onchange="OnRadioStateChange()"> Andata-Ritorno
                                             </div>
-                                        </div>	
+                                            <div id="dataA">
+                                                <label>Scegli la data di Andata: 
+                                                    <input type="date" id="andata" name="dataandata" required>
+                                                </label>
+                                            </div>
+                                            <div id="dataR">
+                                                <label>Scegli la data di Ritorno: 
+                                                    <input type="date" id="ritorno" name="dataritorno">
+                                                </label>    
+                                            </div>
+                                        <div id="selezione">
+                                            <select  name="nposti">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                           </select>  
+                                        </div>
+                                        <div id="pulsante"> <input type="submit" value="Trova"></div> 
                                     </div>
                                 </div>
+                            </div>
+                            </div>	
+                            </div>
+                            </div>
                             </div>
                             </form>
                             </section>
