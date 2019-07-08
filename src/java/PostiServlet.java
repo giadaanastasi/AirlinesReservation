@@ -257,7 +257,7 @@ public class PostiServlet extends HttpServlet {
                         out.println("<td><button id=\"occupato\"  disabled><img class=\"img_content_section\" src =\"./immagini/seat.png\" alt=\"pianta\" height=20px width=20px></button></td>");
                     } }
                 }else if(i==3){
-                    out.println("<td></td>");
+                    out.println("<td>\" \"</td>");
                         for(int j=0; j<15; j++){
                             out.println("<td></td>");
                         }
