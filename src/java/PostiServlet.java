@@ -65,7 +65,16 @@ public class PostiServlet extends HttpServlet {
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet PrenotaServlet</title>"); 
-            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/theme.css\" media=\"screen\">");
+            out.println("<link rel=\"stylesheet\" href=\"./css/animate.css\">");
+        out.println("<link rel=\"stylesheet\" href=\"./css/icomoon.css\">");
+        out.println("<link rel=\"stylesheet\" href=\"./css/themify-icons.css\">");
+        out.println("<link rel=\"stylesheet\" href=\"./css/flexslider.css\">");
+        out.println("<link rel=\"stylesheet\" href=\"./css/bootstrap.css\">");
+        out.println("<link rel=\"stylesheet\" href=\"./css/magnific-popup.css\">");
+        out.println("<link rel=\"stylesheet\" href=\"./css/bootstrap-datepicker.min.css\">");
+        out.println("<link rel=\"stylesheet\" href=\"./css/owl.carousel.min.css\">");
+        out.println("<link rel=\"stylesheet\" href=\"./css/owl.theme.default.min.css\">");
+            out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/style.css\" media=\"screen\">");
             out.println("<script>");
             out.println(""
                     + "var contoPosti=0;"
@@ -194,13 +203,22 @@ public class PostiServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body onunload=chiudi()>");
             out.println("<header>");
-            out.println("<nav>");
-            out.println("<ul>");
-            out.println("<li ><a href=\"index.html\" id=\"current\" >Home</a></li>");
-            out.println("<li><a href=\"./php/members.php\" >I miei voli</a></li>");
-            out.println("<li><a href=\"./html/istructions.html\" >Regolamento</a></li>");	
-            out.println("</ul>");
-            out.println("</nav>");
+            out.println("<nav class=\"gtco-nav\" role=\"navigation\">");
+            out.println("<div class=\"gtco-container\">");
+                out.println("<div class=\"row\">");
+                    out.println("<div class=\"col-sm-4 col-xs-12\">");
+                        out.println("<div id=\"gtco-logo\"><a href=\"../index.html\">Airline Reservations <em>.</em></a>");
+                       out.println(" </div>");
+                    out.println("</div>");
+                    out.println("<div class=\"col-xs-8 text-right menu-1\">");
+                      out.println("  <ul>");
+                       out.println("     <li><a href=\"./voli.html\">I miei voli</a></li>");
+                       out.println("     <li><a href=\"./istruzioni.html\">Regolamento</a></li>");
+                      out.println("  </ul>	");
+                   out.println(" </div>");
+                out.println("</div>	");
+            out.println("</div>");
+        out.println("</nav>");
             out.println("</header>");
             out.println("<nav id=\"aereo\">");
             out.println("<img class=\"img_content_section\" src=\"./immagini/CieloROSA.jpg\" alt=\"pianta\" >");
