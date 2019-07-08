@@ -84,7 +84,7 @@
             <header>
             <nav>
             <ul>
-            <li ><a href="index.html" id="current" >Home</a></li>
+            <li ><a href="index_old.html" id="current" >Home</a></li>
             <li><a href="./php/members.php" >I miei voli</a></li>
            <li><a href="./html/istructions.html" >Regolamento</a></li>	
             </ul>
