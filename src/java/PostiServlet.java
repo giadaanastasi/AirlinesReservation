@@ -262,8 +262,9 @@ public class PostiServlet extends HttpServlet {
                             out.println("<td></td>");
                         }
                 }else {
-                    for(int j=0; j<15; j++){
                     out.println("<td>"+mpf.converti(i-1)+"</td>");
+                    for(int j=0; j<15; j++){
+                    
                     List<MatricePosti> res = mpf.cercaOccupati(val, i-1, j);
                     if(res.isEmpty()){
                         out.println("<td><button name=\""+(i-1)+"_"+j+"\" id=\"libero\" value=\"${flightList.idvolo}\" onclick=\" clickButton(this, "+postiSel+", "+this.lista_posti+")\" ><img class=\"img_content_section\" src =\"./immagini/seat.png\" alt=\"pianta\" height=20px width=20px></button></a></td>");
