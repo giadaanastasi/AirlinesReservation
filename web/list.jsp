@@ -49,25 +49,25 @@
   	<body onload="Init()">
         <div id="sfondo">
             <div id="page">
-            <nav class="gtco-nav" role="navigation">
-            <div class="gtco-container">
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12">
-                        <div id="gtco-logo"><a href="index.html">Airline Reservations <em>.</em></a>
-                        </div>
+                <nav class="gtco-nav" role="navigation">
+                    <div class="gtco-container">
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-12">
+                                <div id="gtco-logo"><a href="index.html">Airline Reservations <em>.</em></a>
+                                </div>
+                            </div>
+                            <div class="col-xs-8 text-right menu-1">
+                                <ul>
+                                    <li><a href="./html/voli.html">I miei voli</a></li>
+                                    <li><a href="./html/istruzioni.html">Regolamento</a></li>
+                                </ul>	
+                            </div>
+                        </div>	
                     </div>
-                    <div class="col-xs-8 text-right menu-1">
-                        <ul>
-                            <li><a href="./html/voli.html">I miei voli</a></li>
-                            <li><a href="./html/istruzioni.html">Regolamento</a></li>
-                        </ul>	
-                    </div>
-                </div>	
-            </div>
-        </nav>
+                </nav>
                 <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" >
-        <div id="aereo" style="background-image: url(../immagini/CieloROSA.jpg);background-repeat:no-repeat;">
-            <!img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
+                    <div id="aereo" style="background-image: url(./immagini/CieloROSA.jpg);background-repeat:no-repeat; background-size: cover">
+            
             <div class="gtco-container">
                 <div class="row">
                     <div class="col-md-12 col-md-offset-0 text-left">
