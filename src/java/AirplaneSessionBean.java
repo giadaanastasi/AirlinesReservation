@@ -30,6 +30,16 @@ public class AirplaneSessionBean {
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
     
+    public void checkNewFlight(String id){
+       for(int i=0; i<Locks.size(); i++){
+            if(Locks.get(i).getId().equals(id)){
+                return;
+            }
+        }
+       Locks.add(new Id_Lock(id));
+        
+    }
+    
     public Map<String, Posto> getBloccati(){
         readLock.readLock().lock();
         try{
