@@ -202,7 +202,7 @@ public class PostiServlet extends HttpServlet {
             out.println("</script>");
             out.println("</head>");
             out.println("<body onunload=chiudi()>");
-            out.println("<div id=\"sfondo\" url(./immagini/CieloROSA.jpg); height: 100%;background-attachment: fixed; background-repeat:no-srepeat;\">");
+            out.println("<div id=\"sfondo\" style=\"background-image: url(../immagini/CieloROSA.jpg);background-repeat:no-repeat;\">");
             out.println("<div id=\"page\">");
             out.println("<nav class=\"gtco-nav\" role=\"navigation\">");
             out.println("<div class=\"gtco-container\">");
@@ -220,7 +220,7 @@ public class PostiServlet extends HttpServlet {
                 out.println("</div>	");
             out.println("</div>");
         out.println("</nav>");
-            out.println("<div id=\"aereo\" style=\"background-image: >");
+            out.println("<div id=\"aereo\" >");
             out.println("<table>");
             
                 
