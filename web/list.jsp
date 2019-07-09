@@ -73,7 +73,7 @@
                                 <div class="form-wrap">
                                     <div class="tab">
                                         <section id="main">
-                                            <form  method="post" action="./myServlet">
+                                            
                                                 <div class="tab">
                                                     <div class="tab-content">
                                                         <div class="tab-content-inner active" >
@@ -134,7 +134,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </form>
                                         </section>
                                     </div>
                                 </div>
