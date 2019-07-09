@@ -5,10 +5,12 @@
  */
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import javax.ejb.Singleton;
 import javax.websocket.Session;
@@ -22,7 +24,7 @@ import javax.websocket.Session;
 public class AirplaneSessionBean {
 
     static Map<String, Posto> occupati = new HashMap<String, Posto> ();
-    private Map<String, ReentrantReadWriteLock> writeLockMap = new HashMap<String, ReentrantReadWriteLock> ();
+    private static ArrayList<Id_Lock> Locks = new ArrayList<ReentrantLock>();
     
     private ReentrantReadWriteLock readLock = new ReentrantReadWriteLock();
     // Add business logic below. (Right-click in editor and choose
@@ -68,5 +70,30 @@ public class AirplaneSessionBean {
             writeLockMap.replace(key, temp); 
         }
         
+    }
+
+    private static class Id_Lock {
+        ReentrantLock lock;
+        String id_volo;
+        public Id_Lock(String volo) {
+            lock = new ReentrantLock();
+            id_volo = volo;
+        
+        }
+        
+        public void LockFromId(String id){
+            if(id.equals(id_volo)){
+                lock.lock();
+            }
+            else return;
+        }
+        
+        
+        public void UnlockFromId(String id){
+            if(id.equals(id_volo)){
+                lock.unlock();
+            }
+            else return;
+        }
     }
 }
