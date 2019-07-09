@@ -40,15 +40,17 @@ public class AirplaneSessionBean {
     
     public void insert(String key, int riga, int colonna, String id_utente){
         
-        ReentrantReadWriteLock temp = writeLockMap.get(key);
+        /*ReentrantReadWriteLock temp = writeLockMap.get(key);
         temp.writeLock().lock();
-        writeLockMap.replace(key, temp);
+        writeLockMap.replace(key, temp);*/
+        readLock.writeLock().lock();
         try{
              occupati.put(key, new Posto(riga, colonna, id_utente));
         }finally{
-            temp = writeLockMap.get(key);
+            /*temp = writeLockMap.get(key);
             temp.writeLock().unlock();
-            writeLockMap.replace(key, temp); 
+            writeLockMap.replace(key, temp);*/
+            readLock.writeLock().unlock();
         }
         
        
