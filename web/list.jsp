@@ -66,73 +66,93 @@
             </div>
         </nav>
                 <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" >
-                <div id="aereo" style="background-image: url(./immagini/CieloROSA.jpg); height: 100%;background-attachment: fixed; background-repeat:no-repeat;">
-            
+        <div id="aereo" style="background-image: url(../immagini/CieloROSA.jpg);background-repeat:no-repeat;">
+            <!img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
             <div class="gtco-container">
-            <div class="row">
-			 
-                    <table>
-                    <tr>
-                    <th>ID</th>
-                    <th>PArtenza</th>
-                    <th>Arrivo</th>
-                    <th>Data</th>
-                    <th>Ora</th>
-                    <th>Prezzo</th>
-                    <th>Numero Posti Liberi</th>
-                    <th>Prenotazione con Posto</th>
-                    <th>Prenotazione Veloce</th>
-                    
-                    </tr>
-                    
-                    <
-                    <c:set var="no" value= "peso" />
-                    <c:set var="data2" value= "${data2}" />
-                    <c:set var="ar" value= "${ar}" />
-                    <c:set var="nposti" value= "${nposti}" />
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-0 text-left">
+                        <div class="row row-mt-15em">
+                            <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+                                <h1>I MIEI VOLI</h1>	
+                            </div>
+                            <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+                                <div class="form-wrap">
+                                    <div class="tab">
+                                        <section id="main">
+                                            <form  method="post" action="./myServlet">
+                                                <div class="tab">
+                                                    <div class="tab-content">
+                                                        <div class="tab-content-inner active" >
+                                                            <div class="tab-content">
+                                                                <div class="tab-content-inner active">
+                                                                    <table>
+                                                                        <tr>
+                                                                            <th>ID</th>
+                                                                            <th>PArtenza</th>
+                                                                            <th>Arrivo</th>
+                                                                            <th>Data</th>
+                                                                            <th>Ora</th>
+                                                                            <th>Prezzo</th>
+                                                                            <th>Numero Posti Liberi</th>
+                                                                            <th>Prenotazione con Posto</th>
+                                                                            <th>Prenotazione Veloce</th>
+                                                                        </tr>
+                                                                        <c:set var="no" value= "peso" />
+                                                                        <c:set var="data2" value= "${data2}" />
+                                                                        <c:set var="ar" value= "${ar}" />
+                                                                        <c:set var="nposti" value= "${nposti}" />
 
-                       <c:forEach items="${flightList}" var="flightList">
-                        <tr>
+                                                                           <c:forEach items="${flightList}" var="flightList">
+                                                                            <tr>
 
-                           <td> ${flightList.idVolo} </td>
-                           <td> ${flightList.partenza} </td>
-                           <td> ${flightList.arrivo} </td>
-                           <td> ${flightList.data} </td>
-                           <td> ${flightList.ora} </td>
-                           <td> ${flightList.costo} </td>
-                           <td> ${flightList.posti} </td>
-                           <td> <a href="./PostiServlet?idvolo=${flightList.idVolo}&ar=${ar}&partenza=${flightList.partenza}&arrivo=${flightList.arrivo}&data=${data2}&posti=${flightList.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList.idVolo}">Bottone</button></a> </td>
-                           <td> <a href="./PrenotaServlet?idvolo=${flightList.idVolo}&ar=${ar}&partenza=${flightList.arrivo}&arrivo=${flightList.partenza}&data=${data2}&posti=${flightList.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList.idVolo}">Bottone</button></a> </td>
+                                                                               <td> ${flightList.idVolo} </td>
+                                                                               <td> ${flightList.partenza} </td>
+                                                                               <td> ${flightList.arrivo} </td>
+                                                                               <td> ${flightList.data} </td>
+                                                                               <td> ${flightList.ora} </td>
+                                                                               <td> ${flightList.costo} </td>
+                                                                               <td> ${flightList.posti} </td>
+                                                                               <td> <a href="./PostiServlet?idvolo=${flightList.idVolo}&ar=${ar}&partenza=${flightList.partenza}&arrivo=${flightList.arrivo}&data=${data2}&posti=${flightList.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList.idVolo}">Bottone</button></a> </td>
+                                                                               <td> <a href="./PrenotaServlet?idvolo=${flightList.idVolo}&ar=${ar}&partenza=${flightList.arrivo}&arrivo=${flightList.partenza}&data=${data2}&posti=${flightList.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList.idVolo}">Bottone</button></a> </td>
+
+                                                                            </tr>
+
+                                                                            </c:forEach>  
+                                                                               <c:forEach items="${flightList2}" var="flightList2">
+                                                                               <tr>
+                                                                                    <td> ${flightList2.idVolo} </td>
+                                                                                    <td> ${flightList2.partenza} </td>
+                                                                                    <td> ${flightList2.arrivo} </td>
+                                                                                    <td> ${flightList2.data} </td>
+                                                                                    <td> ${flightList2.ora} </td>
+                                                                                    <td> ${flightList2.costo} </td>
+                                                                                    <td> ${flightList2.posti} </td>
                                    
-                        </tr>
+                                                                                    <td> <a href="./PostiServlet?idvolo=${flightList2.idVolo}&posti=${flightList2.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList2.idVolo}">Bottone</button></a> </td>
+                                                                                    <td> <a href="./PrenotaServlet?idvolo=${flightList2.idVolo}&posti=${flightList2.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList2.idVolo}">Bottone</button></a> </td>
 
-                            </c:forEach>  
-                               <c:forEach items="${flightList2}" var="flightList2">
-                               <tr>
-                                    <td> ${flightList2.idVolo} </td>
-                                    <td> ${flightList2.partenza} </td>
-                                    <td> ${flightList2.arrivo} </td>
-                                    <td> ${flightList2.data} </td>
-                                    <td> ${flightList2.ora} </td>
-                                    <td> ${flightList2.costo} </td>
-                                    <td> ${flightList2.posti} </td>
-                                   
-                                 <td> <a href="./PostiServlet?idvolo=${flightList2.idVolo}&posti=${flightList2.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList2.idVolo}">Bottone</button></a> </td>
-                                 <td> <a href="./PrenotaServlet?idvolo=${flightList2.idVolo}&posti=${flightList2.posti}&nposti=${nposti}"><button name="idvolo" value="${flightList2.idVolo}">Bottone</button></a> </td>
-                             
-                              </tr>
+                                                                                 </tr>
 
-                            </c:forEach>  
-
-                                   
-                                </table>
-                         
+                                                                               </c:forEach>
+                                                                    </table>
+                                                                </div>
+                                                            </div>	
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-            </div>
+                    </div>
                 </div>
             </div>
         </div>
-                </header>
+    </header>
+                                                                        
             </div>
-	</body>
+        </div>
+    </body>
 </html>
