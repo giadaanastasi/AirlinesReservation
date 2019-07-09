@@ -24,8 +24,8 @@ import javax.websocket.Session;
 public class AirplaneSessionBean {
 
     static Map<String, Posto> occupati = new HashMap<String, Posto> ();
-    private static ArrayList<Id_Lock> Locks = new ArrayList<ReentrantLock>();
     
+    private static ArrayList<Id_Lock> Locks = new ArrayList<Id_Lock>();
     private ReentrantReadWriteLock readLock = new ReentrantReadWriteLock();
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
@@ -41,35 +41,32 @@ public class AirplaneSessionBean {
     }
     
     public void insert(String key, int riga, int colonna, String id_utente){
-        
-        /*ReentrantReadWriteLock temp = writeLockMap.get(key);
-        temp.writeLock().lock();
-        writeLockMap.replace(key, temp);*/
-        readLock.writeLock().lock();
+        for(int i=0; i<Locks.size(); i++){
+            Locks.get(i).LockFromId(key);
+        }        
         try{
              occupati.put(key, new Posto(riga, colonna, id_utente));
         }finally{
-            /*temp = writeLockMap.get(key);
-            temp.writeLock().unlock();
-            writeLockMap.replace(key, temp);*/
-            readLock.writeLock().unlock();
+            for(int i=0; i<Locks.size(); i++){
+                Locks.get(i).UnlockFromId(key);
+            } 
         }
         
        
     }
     
     public void remove(String key){
-        ReentrantReadWriteLock temp = writeLockMap.get(key);
-        temp.writeLock().lock();
-        writeLockMap.replace(key, temp);
+        for(int i=0; i<Locks.size(); i++){
+            Locks.get(i).LockFromId(key);
+        }
+        
         try{
             occupati.remove(key);
         }finally{
-            temp = writeLockMap.get(key);
-            temp.writeLock().unlock();
-            writeLockMap.replace(key, temp); 
+            for(int i=0; i<Locks.size(); i++){
+                Locks.get(i).UnlockFromId(key);
+            }
         }
-        
     }
     
 
@@ -81,18 +78,22 @@ public class AirplaneSessionBean {
             id_volo = volo;
         }
         
-        public String getID(){
+        public String getId(){
             return id_volo;
         }
-        
-        public void LockFromId(){
+                
+        public void LockFromId(String id){
+            if(id.equals(id_volo)){
                 lock.lock();
+            }
+            else return;
         }
-        
-        
-        public void UnlockFromId(){
+               
+        public void UnlockFromId(String id){
+            if(id.equals(id_volo)){
                 lock.unlock();
-            
+            }
+            else return;
         }
     }
 }
