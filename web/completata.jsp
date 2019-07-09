@@ -81,7 +81,7 @@
                                                         <div class="tab-content-inner active" >
                                                             <div class="tab-content">
                                                                 <div class="tab-content-inner active">
-                                                                    <h2>PRENOTAZIONE EFFETTUATA!</h2>
+                                                                    <h2 style="color: black">PRENOTAZIONE EFFETTUATA!</h2>
                                                                 </div>
                                                             </div>	
                                                         </div>
