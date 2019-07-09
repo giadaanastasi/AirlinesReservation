@@ -22,7 +22,19 @@
     	<meta name = "author" content = "Sudoku Mania">
     	<meta name = "keywords" content = "sudoku, mania, giochi, online">
    		<link rel="shortcut icon" type="image/x-icon" href="./immagini/logoFinale.png">
-   		<link rel="stylesheet" type="text/css" href="./css/theme.css" media="screen">
+   		<link rel="stylesheet" type="text/css" href="./css/style.css" media="screen">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="./css/animate.css">
+        <link rel="stylesheet" href="./css/icomoon.css">
+        <link rel="stylesheet" href="./css/themify-icons.css">
+        <link rel="stylesheet" href="./css/flexslider.css">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/magnific-popup.css">
+        <link rel="stylesheet" href="./css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="./css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+        <!link rel="stylesheet" href="./css/theme.css">
+        <link rel="stylesheet" href="./css/style.css">
 		<title>PIANTA POSTI</title>
                 <script>
                     function mostra(){
@@ -34,19 +46,28 @@
                     }
                 </script>
   	</head>
-  	<body onload="init()"> 
-	  		<header>
-				<nav>
-					<ul>
-						<li ><a href="index_old.html" id="current" >Home</a></li>
-						<li><a href="./php/members.php" >I miei voli</a></li>
-						  <li><a href="./html/istructions.html" >Regolamento</a></li>	
-					</ul>
-				</nav>
-			</header>
-			<nav id="aereo">
-				<img class="img_content_section" src="./immagini/CieloROSA.jpg" alt="pianta" >
-			 </nav>
+  	<body onload="Init()">
+        <div id="sfondo">
+            <div id="page">
+            <nav class="gtco-nav" role="navigation">
+            <div class="gtco-container">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <div id="gtco-logo"><a href="index.html">Airline Reservations <em>.</em></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 text-right menu-1">
+                        <ul>
+                            <li><a href="./html/voli.html">I miei voli</a></li>
+                            <li><a href="./html/istruzioni.html">Regolamento</a></li>
+                        </ul>	
+                    </div>
+                </div>	
+            </div>
+        </nav>
+                <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" >
+                <div id="aereo" style="background-image: url(./immagini/CieloROSA.jpg); height: 100%;background-attachment: fixed; background-repeat:no-repeat;">
+            
             <div id="container">
                 <div id="ptsinistra">
 			 
@@ -107,6 +128,9 @@
                                 </table>
                          
                         </div>
+            </div>
+                </div>
+                </header>
             </div>
 	</body>
 </html>
