@@ -202,7 +202,7 @@ public class PostiServlet extends HttpServlet {
             out.println("</script>");
             out.println("</head>");
             out.println("<body onunload=chiudi()>");
-            out.println("<div id=\"sfondo\" style=\"background-image: url(../immagini/CieloROSA.jpg);background-repeat:no-repeat;\">");
+            out.println("<div id=\"sfondo\" style=\"background-image: url(./immagini/CieloROSA.jpg);background-repeat:no-repeat;\">");
             out.println("<div id=\"page\">");
             out.println("<nav class=\"gtco-nav\" role=\"navigation\">");
             out.println("<div class=\"gtco-container\">");
