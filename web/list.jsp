@@ -85,7 +85,7 @@
                                                         <div class="tab-content-inner active" >
                                                             <div class="tab-content">
                                                                 <div class="tab-content-inner active">
-                                                                    <table>
+                                                                    <table id="table_posti">
                                                                         <tr>
                                                                             <th>ID</th>
                                                                             <th>PArtenza</th>
