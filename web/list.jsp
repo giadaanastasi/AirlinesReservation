@@ -46,7 +46,7 @@
                     }
                 </script>
   	</head>
-  	<body onload="Init()">
+  	<body onload="init()">
         <div id="sfondo" style="background-image: url(./immagini/CieloROSA.jpg);background-repeat:no-repeat; background-size: cover;">
             <div id="page">
                 <nav class="gtco-nav" role="navigation">
