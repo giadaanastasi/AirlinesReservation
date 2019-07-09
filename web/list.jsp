@@ -37,16 +37,10 @@
         <link rel="stylesheet" href="./css/style.css">
 		<title>PIANTA POSTI</title>
                 <script>
-                    function mostra(){
-                        document.getElementById("table_posti").style.display="block";
-                        document.getElementById("ptsinistra").style.display="none";
-                    }
-                    function init(){
-                        document.getElementById("table_posti").style.display="none";
-                    }
+                   
                 </script>
   	</head>
-  	<body onload="init()">
+  	<body >
         <div id="sfondo" style="background-image: url(./immagini/CieloROSA.jpg);background-repeat:no-repeat; background-size: cover;">
             <div id="page">
                 <nav class="gtco-nav" role="navigation">
@@ -85,7 +79,7 @@
                                                         <div class="tab-content-inner active" >
                                                             <div class="tab-content">
                                                                 <div class="tab-content-inner active">
-                                                                    <table id="table_posti">
+                                                                    <table>
                                                                         <tr>
                                                                             <th>ID</th>
                                                                             <th>PArtenza</th>
