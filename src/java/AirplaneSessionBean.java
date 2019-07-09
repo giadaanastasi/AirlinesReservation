@@ -71,6 +71,7 @@ public class AirplaneSessionBean {
         }
         
     }
+    
 
     private static class Id_Lock {
         ReentrantLock lock;
@@ -78,22 +79,20 @@ public class AirplaneSessionBean {
         public Id_Lock(String volo) {
             lock = new ReentrantLock();
             id_volo = volo;
-        
         }
         
-        public void LockFromId(String id){
-            if(id.equals(id_volo)){
+        public String getID(){
+            return id_volo;
+        }
+        
+        public void LockFromId(){
                 lock.lock();
-            }
-            else return;
         }
         
         
-        public void UnlockFromId(String id){
-            if(id.equals(id_volo)){
+        public void UnlockFromId(){
                 lock.unlock();
-            }
-            else return;
+            
         }
     }
 }
