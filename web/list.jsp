@@ -66,7 +66,7 @@
                     </div>
                 </nav>
                 <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" >
-                    <div id="aereo" style="background-image: url(./immagini/CieloROSA.jpg);background-repeat:no-repeat; background-size: cover">
+                    <div id="aereo" style="background-image: url(./immagini/CieloROSA.jpg);background-repeat:no-repeat; background-size: cover; background-attachment: absolute;">
             
             <div class="gtco-container">
                 <div class="row">
