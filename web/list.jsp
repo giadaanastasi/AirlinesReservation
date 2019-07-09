@@ -47,7 +47,7 @@
                 </script>
   	</head>
   	<body onload="Init()">
-        <div id="sfondo">
+        <div id="sfondo" style="background-image: url(./immagini/CieloROSA.jpg);background-repeat:no-repeat; background-size: cover;">
             <div id="page">
                 <nav class="gtco-nav" role="navigation">
                     <div class="gtco-container">
@@ -66,7 +66,7 @@
                     </div>
                 </nav>
                 <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" >
-                    <div id="aereo" style="background-image: url(./immagini/CieloROSA.jpg);background-repeat:no-repeat; background-size: cover;">
+                    <div id="aereo" >
             
             <div class="gtco-container">
                 <div class="row">
