@@ -68,8 +68,8 @@
                 <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" >
                 <div id="aereo" style="background-image: url(./immagini/CieloROSA.jpg); height: 100%;background-attachment: fixed; background-repeat:no-repeat;">
             
-            <div id="container">
-                <div id="ptsinistra">
+            <div class="gtco-container">
+            <div class="row">
 			 
                     <table>
                     <tr>
@@ -130,6 +130,8 @@
                         </div>
             </div>
                 </div>
+            </div>
+        </div>
                 </header>
             </div>
 	</body>
