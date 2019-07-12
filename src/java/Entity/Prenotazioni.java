@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Prenotazioni.findAll", query = "SELECT p FROM Prenotazioni p")
     , @NamedQuery(name = "Prenotazioni.findByIDprenotazione", query = "SELECT p FROM Prenotazioni p WHERE p.iDprenotazione = :iDprenotazione")
     , @NamedQuery(name = "Prenotazioni.findByIDvolo", query = "SELECT p FROM Prenotazioni p WHERE p.iDvolo = :iDvolo")
+    , @NamedQuery(name = "Prenotazioni.removeByIDprenotazione", query = "DELETE FROM Prenotazioni p WHERE p.iDprenotazione = :iDprenotazione ")
     , @NamedQuery(name = "Prenotazioni.findByPassword", query = "SELECT p FROM Prenotazioni p WHERE p.password = :password")})
 public class Prenotazioni implements Serializable {
 

@@ -12,6 +12,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -84,5 +85,13 @@ public class MatricePostiFacade extends AbstractFacade<MatricePosti> {
     public String return_lista(){
         return lista;
     }
+    
+      public void rimozionemp(Integer iDprenotazione)
+    {
+        Query query = em.createNamedQuery("MatricePosti.removeByIDprenotazione")
+                .setParameter("iDprenotazione", iDprenotazione);
+                query.executeUpdate();
+                em.flush();
+    } 
     
 }

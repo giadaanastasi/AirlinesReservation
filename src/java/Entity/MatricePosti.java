@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "MatricePosti.findAll", query = "SELECT m FROM MatricePosti m")
     , @NamedQuery(name = "MatricePosti.findByIDvolo", query = "SELECT m FROM MatricePosti m WHERE m.matricePostiPK.iDvolo = :iDvolo")
     , @NamedQuery(name = "MatricePosti.findByRigaAndColonna", query = "SELECT m FROM MatricePosti m WHERE m.matricePostiPK.iDvolo = :iDvolo AND m.matricePostiPK.riga = :riga AND m.matricePostiPK.colonna = :colonna")
+    , @NamedQuery(name = "MatricePosti.removeByIDprenotazione", query = "DELETE FROM MatricePosti m WHERE m.matricePostiPK.idPrenotazione = :idPrenotazione")
     , @NamedQuery(name = "MatricePosti.findByColonna", query = "SELECT m FROM MatricePosti m WHERE m.matricePostiPK.colonna = :colonna")})
 public class MatricePosti implements Serializable {
 

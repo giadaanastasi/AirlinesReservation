@@ -13,6 +13,7 @@ import javax.ejb.EJBException;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.swing.JOptionPane;
 
 /**
@@ -149,6 +150,18 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
             throw new EJBException(e.getMessage());
         } 
     
+    }
+    
+    public void rimozionep(Integer iDprenotazione, String password)
+    {
+        Query query = em.createNamedQuery("Prenotazioni.removeByIDprenotazione")
+                .setParameter("iDprenotazione", iDprenotazione)
+                .setParameter("password", password);
+         
+                int count= query.executeUpdate();
+                 //System.out.println(count);
+                em.flush();
+                
     }
 
     
