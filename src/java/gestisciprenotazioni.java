@@ -88,11 +88,10 @@ public class gestisciprenotazioni extends HttpServlet {
         request.setAttribute("password", password);
         Integer ID=Integer.parseInt(ID_prenotazione);
         
-        response.getWriter().println("id: "+ID_prenotazione);
-        String ris = pa.rimozionep(ID,password);
-        response.getWriter().println("boolean: "+ris);
+        
+        pa.rimozionep(ID,password);
+        
         mpa.rimozionemp(ID);
-        response.getWriter().println("post matr posti");
         
         }catch(Exception e){
             System.out.println(e.getMessage());
@@ -100,7 +99,7 @@ public class gestisciprenotazioni extends HttpServlet {
         
             
             
-        //request.getRequestDispatcher("Rimozionecompletata.jsp").forward(request, response); 
+        request.getRequestDispatcher("Rimozionecompletata.jsp").forward(request, response); 
      
             
             

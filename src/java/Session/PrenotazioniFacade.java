@@ -152,21 +152,13 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
     
     }
     
-    public String rimozionep(Integer iDprenotazione, String password)
+    public void rimozionep(Integer iDprenotazione, String password)
     {
         try{
         Query q=em.createNamedQuery("Prenotazioni.removeByIDprenotazione")
                         .setParameter("iDprenotazione", iDprenotazione);
         q.executeUpdate();
         em.flush();
-        /*if(listaPrenotazioni.isEmpty())
-            return "false";
-        for(int i=0; i<listaPrenotazioni.size(); i++){
-            em.getTransaction().begin();
-            em.remove((Prenotazioni)listaPrenotazioni.get(i));
-            em.getTransaction().commit();
-        }*/
-        return "true";
         
                 
                  //System.out.println(count);           

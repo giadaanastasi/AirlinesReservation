@@ -87,14 +87,13 @@ public class MatricePostiFacade extends AbstractFacade<MatricePosti> {
         return lista;
     }
     
-      public String rimozionemp(Integer iDprenotazione)
+      public void rimozionemp(Integer iDprenotazione)
     {
         try{
         Query query = em.createNamedQuery("MatricePosti.removeByIDprenotazione")
                 .setParameter("idPrenotazione", iDprenotazione);
         query.executeUpdate();
         em.flush();
-        return "true";
         }catch(Exception e){
             throw new EJBException(e.getMessage());
         }
