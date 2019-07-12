@@ -54,8 +54,8 @@
                             </div>
                             <div class="col-xs-8 text-right menu-1">
                                 <ul>
-                                    <li><a href="./html/voli.html">I miei voli</a></li>
-                                    <li><a href="./html/istruzioni.html">Regolamento</a></li>
+                                    <li><a href="./voli.html">I miei voli</a></li>
+                                    <li><a href="./istruzioni.html">Regolamento</a></li>
                                 </ul>	
                             </div>
                         </div>	
