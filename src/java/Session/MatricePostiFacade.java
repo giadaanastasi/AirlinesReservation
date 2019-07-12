@@ -9,6 +9,7 @@ import Entity.MatricePosti;
 import Entity.MatricePostiPK;
 import java.util.Date;
 import java.util.List;
+import javax.ejb.EJBException;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -86,12 +87,17 @@ public class MatricePostiFacade extends AbstractFacade<MatricePosti> {
         return lista;
     }
     
-      public void rimozionemp(Integer iDprenotazione)
+      public String rimozionemp(Integer iDprenotazione)
     {
+        try{
         Query query = em.createNamedQuery("MatricePosti.removeByIDprenotazione")
-                .setParameter("iDprenotazione", iDprenotazione);
-                query.executeUpdate();
-                em.flush();
+                .setParameter("idPrenotazione", iDprenotazione);
+        query.executeUpdate();
+        em.flush();
+        return "true";
+        }catch(Exception e){
+            throw new EJBException(e.getMessage());
+        }
     } 
     
 }

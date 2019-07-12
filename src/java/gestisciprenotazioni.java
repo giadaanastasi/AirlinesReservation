@@ -45,7 +45,11 @@ public class gestisciprenotazioni extends HttpServlet {
     
     @EJB
     private FlightFacade fa;
+    
+    @EJB
     private PrenotazioniFacade pa;
+    
+    @EJB
     private MatricePostiFacade mpa;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -84,9 +88,9 @@ public class gestisciprenotazioni extends HttpServlet {
         request.setAttribute("password", password);
         Integer ID=Integer.parseInt(ID_prenotazione);
         
-        response.getWriter().println(ID_prenotazione);
-        pa.rimozionep(ID,password);
-        response.getWriter().println("post prenot");
+        response.getWriter().println("id: "+ID_prenotazione);
+        String ris = pa.rimozionep(ID,password);
+        response.getWriter().println("boolean: "+ris);
         mpa.rimozionemp(ID);
         response.getWriter().println("post matr posti");
         
