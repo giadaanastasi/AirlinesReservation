@@ -84,17 +84,17 @@ public class gestisciprenotazioni extends HttpServlet {
         request.setAttribute("password", password);
         Integer ID=Integer.parseInt(ID_prenotazione);
         
-        
+        response.getWriter().println(ID_prenotazione);
         pa.rimozionep(ID,password);
+        response.getWriter().println("post prenot");
         mpa.rimozionemp(ID);
+        response.getWriter().println("post matr posti");
         
-        response.getWriter().println("ciao: "+ID_prenotazione+" "+password);
-
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
         
-           
+            
             
         //request.getRequestDispatcher("Rimozionecompletata.jsp").forward(request, response); 
      
