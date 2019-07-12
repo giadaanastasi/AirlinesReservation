@@ -208,13 +208,13 @@ public class PostiServlet extends HttpServlet {
             out.println("<div class=\"gtco-container\">");
                 out.println("<div class=\"row\">");
                     out.println("<div class=\"col-sm-4 col-xs-12\">");
-                        out.println("<div id=\"gtco-logo\"><a href=\"../index.html\">Airline Reservations <em>.</em></a>");
+                        out.println("<div id=\"gtco-logo\"><a href=\"./index.html\">Airline Reservations <em>.</em></a>");
                        out.println(" </div>");
                     out.println("</div>");
                     out.println("<div class=\"col-xs-8 text-right menu-1\">");
                       out.println("  <ul>");
-                       out.println("     <li><a href=\"./html/voli.html\">I miei voli</a></li>");
-                       out.println("     <li><a href=\"./html/istruzioni.html\">Regolamento</a></li>");
+                       out.println("     <li><a href=\"./voli.html\">I miei voli</a></li>");
+                       out.println("     <li><a href=\"./istruzioni.html\">Regolamento</a></li>");
                       out.println("  </ul>	");
                    out.println(" </div>");
                 out.println("</div>	");
