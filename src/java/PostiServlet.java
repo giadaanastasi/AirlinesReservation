@@ -221,7 +221,7 @@ public class PostiServlet extends HttpServlet {
             out.println("</div>");
         out.println("</nav>");
             out.println("<div id=\"aereo\" >");
-            out.println("<table>");
+            out.println("<table style=\" margin-left: 370px; margin-top: 100px;\"}>");
             
                 
         out.println("<tbody>");
@@ -283,7 +283,7 @@ public class PostiServlet extends HttpServlet {
             out.println("</table>");
             
             //BOTTONE CHE FA PARTIRE LA PRENOTAZIONE DI PIù POSTI SELEZIONATI
-                    out.println("<a  id=\"link\" href=\"./PrenotaServlet?idvolo="+val+"&ar="+ar+"&partenza="+partenza+"&arrivo="+arrivo+"&data="+data+"&posti="+posti+"&nposti="+postiSel+"&lista_posti=\"><button onclick=\"invia()\" id=\"continua\" disabled>PROCEDI CON LA PRENOTAZIONE</button>");
+                    out.println("<a  id=\"link\" href=\"./PrenotaServlet?idvolo="+val+"&ar="+ar+"&partenza="+partenza+"&arrivo="+arrivo+"&data="+data+"&posti="+posti+"&nposti="+postiSel+"&lista_posti=\"><button onclick=\"invia()\" id=\"continua\"  style=\" margin-left: 540px; margin-top: 20px;\" disabled>PROCEDI CON LA PRENOTAZIONE</button>");
             out.println("</div>");
             out.println("</header>");
             out.println("</div>");
