@@ -71,9 +71,9 @@
                             <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
                                 <h1>I MIEI VOLI</h1>	
                             </div>
-                            <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
-                                <div class="form-wrap">
-                                    <div class="tab">
+                    <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight" style="left: 55.33333%; height: auto">
+                        <div class="form-wrap" style=" width: 500px; padding-left:0px;padding-right: 0px; height: auto">
+                            <div class="tab" style="width: 500px; padding-left:0px;padding-right: 0px; height: auto">
                                         <section id="main">
                                             
                                                 <div class="tab">
