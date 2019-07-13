@@ -235,8 +235,9 @@ public class PostiServlet extends HttpServlet {
         String postiSel=request.getParameter("nposti");
         // c'è da prestare attenzione ai nomi semmai cambiarli e rimetterli un pò più significativi
         out.println("<input type=\"text\" id=\"lista_posti\" hidden>");
-        out.println("<h3> Completa la tua prenotazione entro: <div id=\"demo\"></div><h3>");
-        out.println("<button id=\"aumenta\" onclick=\"aumenta()\">AUMENTA TEMPO</button>");
+        out.println("<div class=\"col-md-7 mt-text animate-box\" data-animate-effect=\"fadeInUp\">")
+        out.println("<h1> Completa la tua prenotazione entro: <div id=\"demo\"></div><h1>");
+        out.println("<button id=\"aumenta\" onclick=\"aumenta()\">AUMENTA TEMPO</button></div>");
         for(int j=0; j<15; j++){
             out.println("<td>"+j+"</td>");
         }
