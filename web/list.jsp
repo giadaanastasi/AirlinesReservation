@@ -88,7 +88,7 @@
                                                                             <th>Ora</th>
                                                                             <th style="padding-right: 5%">Prezzo</th>
                                                                             <th style="padding-right: 5%">Posti Liberi</th>
-                                                                            <th>Prenotazione con Posto</th>
+                                                                            <th style="padding-right: 5%">Prenotazione con Posto</th>
                                                                             <th>Prenotazione Veloce</th>
                                                                         </tr>
                                                                         <c:set var="no" value= "peso" />
