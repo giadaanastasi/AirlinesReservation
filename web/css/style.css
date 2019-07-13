@@ -125,8 +125,9 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .scrolling-wrapper {
   overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
+  overflow-y: pre-wrap;
+  white-space: pre-wrap;
+  display: inline-block;
 
   .card {
     display: inline-block;
