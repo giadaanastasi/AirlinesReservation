@@ -81,13 +81,13 @@
                                                                 <div class="tab-content-inner active" style="width: 850px; height: auto;">
                                                                     <table>
                                                                         <tr>
-                                                                            <th>ID</th>
-                                                                            <th>Partenza</th>
-                                                                            <th>Arrivo</th>
-                                                                            <th>Data</th>
+                                                                            <th style="padding-right: 5%">ID</th>
+                                                                            <th style="padding-right: 5%">Partenza</th>
+                                                                            <th style="padding-right: 5%">Arrivo</th>
+                                                                            <th style="padding-right: 5%">Data</th>
                                                                             <th>Ora</th>
-                                                                            <th>Prezzo</th>
-                                                                            <th>Numero Posti Liberi</th>
+                                                                            <th style="padding-right: 5%">Prezzo</th>
+                                                                            <th style="padding-right: 5%">Posti Liberi</th>
                                                                             <th>Prenotazione con Posto</th>
                                                                             <th>Prenotazione Veloce</th>
                                                                         </tr>
