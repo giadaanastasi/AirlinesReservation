@@ -31,7 +31,7 @@ body {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  background: url("../immagini/CieloROSA.jpg") center no-repeat #fff;
+  /*background: url("../immagini/CieloROSA.jpg") center no-repeat #fff;*/
 }
 
 #libero{
