@@ -67,18 +67,18 @@
                     <div class="col-md-12 col-md-offset-0 text-left">
                         <div class="row row-mt-15em">
                             <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-                                <h1>I MIEI VOLI</h1>	
+                                <!--h1>I MIEI VOLI</h1!-->	
                             </div>
                             <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
-                                <div class="form-wrap">
+                                <div class="form-wrap" style="width: 900px;">
                                     <div class="tab">
                                         <section id="main">
                                             
                                                 <div class="tab">
-                                                    <div class="tab-content">
-                                                        <div class="tab-content-inner active" >
-                                                            <div class="tab-content">
-                                                                <div class="tab-content-inner active">
+                                                    <div class="tab-content" style="width: 900px; padding-left:0px;padding-right: 0px; height: 350px">
+                                                        <div class="tab-content-inner active" style="width: 850px; height: 300px;">
+                                                            <div class="tab-content" style="width: 850px; height: 300px;">
+                                                                <div class="tab-content-inner active" style="width: 850px; height: 300px;">
                                                                     <table>
                                                                         <tr>
                                                                             <th>ID</th>
