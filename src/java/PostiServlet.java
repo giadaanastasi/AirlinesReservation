@@ -211,7 +211,7 @@ public class PostiServlet extends HttpServlet {
                         out.println("<div id=\"gtco-logo\"><a href=\"./index.html\">Airline Reservations <em>.</em></a>");
                        out.println(" </div>");
                     out.println("</div>");
-                    out.println("<div class=\"col-xs-8 text-right menu-1\">");
+                    out.println("<div class=\"text-right menu-1\">");
                       out.println("  <ul>");
                        out.println("     <li><a href=\"./voli.html\">Gesctisci voli</a></li>");
                        out.println("     <li><a href=\"./istruzioni.html\">Regolamento</a></li>");

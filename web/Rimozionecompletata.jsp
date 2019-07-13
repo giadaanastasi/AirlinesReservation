@@ -52,7 +52,7 @@
                                 <div id="gtco-logo"><a href="index.html">Airline Reservations <em>.</em></a>
                                 </div>
                             </div>
-                            <div class="col-xs-8 text-right menu-1">
+                            <div class="text-right menu-1">
                                 <ul>
                                     <li><a href="./voli.html">Gesctisci voli</a></li>
                                     <li><a href="./istruzioni.html">Regolamento</a></li>
