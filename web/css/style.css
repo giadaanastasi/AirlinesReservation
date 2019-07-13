@@ -123,6 +123,16 @@ h1, h2, h3, h4, h5, h6, figure {
   background: #09C6AB;
 }
 
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  .card {
+    display: inline-block;
+  }
+}
+
 .gtco-container {
   max-width: 1100px;
   position: relative;

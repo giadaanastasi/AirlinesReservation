@@ -112,7 +112,7 @@
         <% int idvolo = Integer.parseInt(request.getAttribute("idvolo").toString());%>
 
         
-         <table>
+         <table class="scrolling-wrapper">
                     <% for(int row=0; row <= 5; row++) { %>
                         <tr>
                     
