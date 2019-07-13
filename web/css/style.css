@@ -13,6 +13,7 @@
 body {
   background: url(../immagini/CieloROSA.jpg);
   font-family: "Lato", Arial, sans-serif;
+  background-repeat: no-repeat;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
