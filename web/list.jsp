@@ -75,14 +75,14 @@
                                         <section id="main">
                                             
                                                 <div class="tab">
-                                                    <div class="tab-content" style="width: 900px; padding-left:0px;padding-right: 0px; height: 350px">
-                                                        <div class="tab-content-inner active" style="width: 850px; height: 300px;">
-                                                            <div class="tab-content" style="width: 850px; height: 300px;">
-                                                                <div class="tab-content-inner active" style="width: 850px; height: 300px;">
+                                                    <div class="tab-content" style="width: 900px; padding-left:0px;padding-right: 0px; height: auto">
+                                                        <div class="tab-content-inner active" style="width: 850px; height: auto;">
+                                                            <div class="tab-content" style="width: 850px; height: auto;">
+                                                                <div class="tab-content-inner active" style="width: 850px; height: auto;">
                                                                     <table>
                                                                         <tr>
                                                                             <th>ID</th>
-                                                                            <th>PArtenza</th>
+                                                                            <th>Partenza</th>
                                                                             <th>Arrivo</th>
                                                                             <th>Data</th>
                                                                             <th>Ora</th>
