@@ -38,24 +38,18 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
     }
     
     private int getRandomNumberInRange() {
-
 		Random r = new Random();
-		int temp = r.nextInt((id_max - id_min) + 1) + id_min;
-                
-                
-
-                return temp;
+		int temp = r.nextInt((id_max - id_min) + 1) + id_min;     
+        return temp;
 	}
     
     private int getRandomPosto(int i) {
         Random r = new Random();
         int temp;
-	if(i==0){
+	    if(i==0){
             temp = r.nextInt((5 - 0) + 1);
         }
-        else temp = r.nextInt((14 - 0) + 1);
-        
-                
+        else temp = r.nextInt((14 - 0) + 1);        
         return temp;
     }
     
@@ -81,20 +75,19 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
             em.flush();
             String[] arr=lista.split(";");
         
-        for(int i=0; i<arr.length; i++){
-            Integer riga=Integer.parseInt(arr[i].split("_")[0]);
-            Integer colonna=Integer.parseInt(arr[i].split("_")[1]);
+            for(int i=0; i<arr.length; i++){
+                Integer riga=Integer.parseInt(arr[i].split("_")[0]);
+                Integer colonna=Integer.parseInt(arr[i].split("_")[1]);
+                
+                MatricePosti mposto=new MatricePosti(idvolo, idprenotaz, riga, colonna);
+                
+                em.persist(mposto);
+                em.flush();
+            }    
             
-            MatricePosti mposto=new MatricePosti(idvolo, idprenotaz, riga, colonna);
-            
-            em.persist(mposto);
-            em.flush();
-        }    
-            
-        }catch(Exception e){
+        } catch(Exception e) {
             throw new EJBException(e.getMessage());
-        } 
-    
+        }    
     }
     
     public void prenotaVeloce(Integer idvolo, Integer numPosti)
@@ -115,54 +108,45 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
             String passwd="ciao";
             Prenotazioni mprenot  = new Prenotazioni(idprenotaz,idvolo,passwd);
             for(int i=0; i<numPosti; i++){
-              int colonna=getRandomPosto(1);
-              int riga=getRandomPosto(0);
-            
-            List<MatricePosti> listaPosti=em.createNamedQuery("MatricePosti.findByRigaAndColonna")
+                int colonna=getRandomPosto(1);
+                int riga=getRandomPosto(0);
+                List<MatricePosti> listaPosti=em.createNamedQuery("MatricePosti.findByRigaAndColonna")
                         .setParameter("iDvolo", idvolo)
                         .setParameter("riga", riga)
                         .setParameter("colonna", colonna)
                         .getResultList();
             
-            while(!listaPosti.isEmpty()){
-                colonna=getRandomPosto(1);
-                riga=getRandomPosto(0);
+                while(!listaPosti.isEmpty()){
+                    colonna=getRandomPosto(1);
+                    riga=getRandomPosto(0);
             
-                listaPosti=em.createNamedQuery("MatricePosti.findByRigaAndColonna")
+                    listaPosti=em.createNamedQuery("MatricePosti.findByRigaAndColonna")
                         .setParameter("iDvolo", idvolo)
                         .setParameter("riga", riga)
                         .setParameter("colonna", colonna)
                         .getResultList();
-            }
-            
-            
-            MatricePosti mposto=new MatricePosti(idvolo, idprenotaz, riga, colonna);
-            
-            em.persist(mprenot);
-            em.flush();
-            
-            em.persist(mposto);
-            em.flush();
-              
-            }
-            
-        }catch(Exception e){
+                }
+                MatricePosti mposto=new MatricePosti(idvolo, idprenotaz, riga, colonna);
+                em.persist(mprenot);
+                em.flush();
+                
+                em.persist(mposto);
+                em.flush();
+                  
+            }    
+        } catch(Exception e) {
             throw new EJBException(e.getMessage());
-        } 
-    
+        }
     }
     
     public void rimozionep(Integer iDprenotazione, String password)
     {
         try{
-        Query q=em.createNamedQuery("Prenotazioni.removeByIDprenotazione")
+            Query q=em.createNamedQuery("Prenotazioni.removeByIDprenotazione")
                         .setParameter("iDprenotazione", iDprenotazione);
-        q.executeUpdate();
-        em.flush();
-        
-                
-                 //System.out.println(count);           
-    }catch(Exception e){
+            q.executeUpdate();
+            em.flush();           
+        } catch(Exception e) {
             throw new EJBException(e.getMessage());
         }
     }
