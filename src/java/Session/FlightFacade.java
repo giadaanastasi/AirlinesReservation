@@ -34,12 +34,9 @@ public class FlightFacade extends AbstractFacade<Flight> {
     
 
     public void FlightDecrease(int idVolo,int postiLib, int postiSel){
-        //penso si possa lasciare cosi per prenotaziini multiple se cicliamo sulla chiamata prima.
         Integer risultato= postiLib-postiSel;
         Query query = em.createQuery("UPDATE Flight SET posti="+risultato+" WHERE idVolo="+idVolo);
-        query.executeUpdate();
-        
-        
+        query.executeUpdate();       
     }   
     
     public List<Flight> getTratte(String partenza, String arrivo, String data){
@@ -52,9 +49,7 @@ public class FlightFacade extends AbstractFacade<Flight> {
     }
     
     public List<Flight> getAll(){
-        //em=emf.createEntityManager();
         List<Flight> result = em.createNamedQuery("Flight.findAll")
-        //List<Flight> result = em.createQuery("SELECT f from Flight f", Flight.class)
                 .getResultList();
         return result;
     }
