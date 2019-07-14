@@ -41,7 +41,6 @@ public class AirplaneServerEndpoint {
         while(iter.hasNext()) {
             Object key = iter.next();
             String msg = key.toString().split("_")[1]+"_"+key.toString().split("_")[2]+";bloccato;"+key.toString().split("_")[0];
-            asb.checkNewFlight(key.toString().split("_")[0]);
             Iterator<Session> iterator = airplaneUsers.iterator();
             while(iterator.hasNext()){
                 iterator.next().getBasicRemote().sendText(msg);
@@ -56,6 +55,7 @@ public class AirplaneServerEndpoint {
         // message = r_c;stato;id_volo
         
         String[] temp = message.split(";");
+        asb.checkNewFlight(temp[2]);
         Map<String, Posto> occupati = asb.getBloccati();
         Posto p = occupati.get(temp[2]+"_"+temp[0]);
         if (p == null){
