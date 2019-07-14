@@ -92,19 +92,19 @@ public class gestisciprenotazioni extends HttpServlet {
         boolean p1=pa.rimozionep(ID,password);
         
         mpa.rimozionemp(ID);
-        
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-        
-          if(p1)  
+        if(p1)  
           { 
             request.getRequestDispatcher("Rimozionecompletata.jsp").forward(request, response); 
           }
           else
           { 
             request.getRequestDispatcher("Rimozionenonriuscita.jsp").forward(request, response); 
-          }              
+          } 
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
+                       
             
             
             
