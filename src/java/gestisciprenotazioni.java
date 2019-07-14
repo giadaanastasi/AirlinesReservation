@@ -89,7 +89,7 @@ public class gestisciprenotazioni extends HttpServlet {
         Integer ID=Integer.parseInt(ID_prenotazione);
         
         
-        pa.rimozionep(ID,password);
+        boolean p1=pa.rimozionep(ID,password);
         
         mpa.rimozionemp(ID);
         
@@ -97,10 +97,14 @@ public class gestisciprenotazioni extends HttpServlet {
             System.out.println(e.getMessage());
         }
         
-            
-            
-        request.getRequestDispatcher("Rimozionecompletata.jsp").forward(request, response); 
-     
+          if(p1)  
+          { 
+            request.getRequestDispatcher("Rimozionecompletata.jsp").forward(request, response); 
+          }
+          else
+          { 
+            request.getRequestDispatcher("Rimozionenonriuscita.jsp").forward(request, response); 
+          }              
             
             
             
