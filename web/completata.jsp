@@ -82,7 +82,7 @@
                                                             <div class="tab-content">
                                                                 <div class="tab-content-inner active">
                                                                     <h2 style="color: black">PRENOTAZIONE EFFETTUATA!</h2>
-                                                                    <h2> ID PRENOTAZIONE: <c:set var="res" value= "${res}" /></h2>
+                                                                    <h2 style="color: black"> ID PRENOTAZIONE:${res}</h2> 
                                                                 </div>
                                                             </div>	
                                                         </div>
