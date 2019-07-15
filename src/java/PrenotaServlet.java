@@ -52,7 +52,7 @@ public class PrenotaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-         
+       Integer res = 0;
        response.getWriter().println("dentro do Post");
         String value=request.getParameter("idvolo");
         
@@ -70,13 +70,13 @@ public class PrenotaServlet extends HttpServlet {
         
            response.getWriter().println("Dentro prenota completa");
            
-           pa.prenotaCompleta(val, lista);
+           res = pa.prenotaCompleta(val, lista);
            fDecrementa.FlightDecrease(val,postiLiberi,postiSelezionati);
         
         // c'è il discorso che possiamo o iterare la funzione con un while per prenotare più posti o modificare la prenota passandogli anche il numero posti.
             // provo con un for per ora poi non sò se con la concorrenza andrà bene uguale, se pensi di poterlo far meglio vedi te =P
         }else{
-            pa.prenotaVeloce(val, postiSelezionati);
+            res = pa.prenotaVeloce(val, postiSelezionati);
             fDecrementa.FlightDecrease(val,postiLiberi,postiSelezionati);
         }
         
@@ -93,6 +93,7 @@ public class PrenotaServlet extends HttpServlet {
         }
         else
         {
+         request.setAttribute("res",res);
          request.getRequestDispatcher("completata.jsp").forward(request, response);
         }
         

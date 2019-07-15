@@ -53,8 +53,9 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
         return temp;
     }
     
-    public void prenotaCompleta(Integer idvolo, String lista)
+    public Integer prenotaCompleta(Integer idvolo, String lista)
     {
+        Integer res =0;
         try{
             Integer idprenotaz= getRandomNumberInRange();
             List<Prenotazioni> listaPrenotazioni=em.createNamedQuery("Prenotazioni.findByIDprenotazione")
@@ -83,15 +84,18 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
                 
                 em.persist(mposto);
                 em.flush();
-            }    
+            }
+            res = mprenot.getIDprenotazione();
             
         } catch(Exception e) {
             throw new EJBException(e.getMessage());
-        }    
+        }  
+        return res;
     }
     
-    public void prenotaVeloce(Integer idvolo, Integer numPosti)
+    public Integer prenotaVeloce(Integer idvolo, Integer numPosti)
     {
+        Integer res =0;
         try{
             Integer idprenotaz= getRandomNumberInRange();
             List<Prenotazioni> listaPrenotazioni=em.createNamedQuery("Prenotazioni.findByIDprenotazione")
@@ -132,11 +136,12 @@ public class PrenotazioniFacade extends AbstractFacade<Prenotazioni> {
                 
                 em.persist(mposto);
                 em.flush();
-                  
+            res = mprenot.getIDprenotazione();
             }    
         } catch(Exception e) {
             throw new EJBException(e.getMessage());
         }
+        return res;
     }
     
     public boolean rimozionep(Integer iDprenotazione, String password)
